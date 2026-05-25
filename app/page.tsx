@@ -1,6 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import { Footer } from "@/components/Footer";
+import { FadeIn, Float } from "@/components/Motion";
 import { Navbar } from "@/components/Navbar";
 import { SectionHeader } from "@/components/SectionHeader";
 import {
@@ -12,70 +13,95 @@ import {
   stats,
 } from "@/lib/site-data";
 
+const container = "mx-auto w-[min(1180px,calc(100%_-_40px))] max-sm:w-[calc(100%_-_28px)]";
+const primaryButton =
+  "inline-flex min-h-12 items-center justify-center gap-3 rounded-[10px] bg-gradient-to-br from-[#c8791c] to-[#f3b23f] px-6 text-sm font-black text-white shadow-[0_14px_34px_rgba(217,149,36,0.32)] transition hover:-translate-y-0.5 hover:shadow-[0_18px_44px_rgba(217,149,36,0.36)] max-sm:w-full";
+const ghostButton =
+  "inline-flex min-h-12 items-center justify-center gap-3 rounded-[10px] border border-white/35 bg-white/[0.06] px-6 text-sm font-black text-white transition hover:-translate-y-0.5 hover:border-white/65 hover:shadow-[0_16px_40px_rgba(0,0,0,0.18)] max-sm:w-full";
+const goldIcon =
+  "h-10 w-10 shrink-0 rounded-full border-2 border-[#f3b23f] bg-[linear-gradient(90deg,transparent_45%,#f3b23f_45%_55%,transparent_55%),linear-gradient(transparent_45%,#f3b23f_45%_55%,transparent_55%)]";
+
 export default function Home() {
   return (
     <>
       <Navbar />
       <main>
-        <section className="hero" id="about">
-          <div className="hero-noise" aria-hidden="true" />
-          <div className="container hero-grid">
-            <div className="hero-copy reveal">
-              <p className="eyebrow">Nigeria&apos;s leading</p>
-              <h1>
-                Ice Cream <span>Manufacturing</span> Company
+        <section
+          className="relative isolate min-h-[760px] overflow-hidden bg-[radial-gradient(circle_at_66%_35%,rgba(17,166,232,0.28),transparent_33%),linear-gradient(125deg,#05142b_0%,#071a34_48%,#020d20_100%)] pt-[150px] pb-8 text-white max-lg:min-h-0 max-lg:pt-32 max-sm:pt-28"
+          id="about"
+        >
+          <div className="absolute inset-0 -z-10 bg-[radial-gradient(circle_at_42%_18%,rgba(243,178,63,0.12),transparent_18%),radial-gradient(circle_at_74%_20%,rgba(255,255,255,0.16),transparent_8%),radial-gradient(circle_at_88%_62%,rgba(17,166,232,0.18),transparent_22%)] opacity-90" />
+          <div className="absolute inset-0 -z-20 bg-[linear-gradient(90deg,rgba(255,255,255,0.04)_1px,transparent_1px),linear-gradient(rgba(255,255,255,0.035)_1px,transparent_1px)] bg-[size:82px_82px]" />
+
+          <div className={`${container} grid items-center gap-6 lg:grid-cols-[minmax(560px,0.9fr)_minmax(0,1.1fr)]`}>
+            <FadeIn className="max-w-xl">
+              <p className="mb-3.5 text-xs font-black uppercase tracking-[0.08em] text-[#f3b23f]">
+                Nigeria&apos;s leading
+              </p>
+              <h1 className="font-serif text-[clamp(3.1rem,5.1vw,4.25rem)] leading-[0.96] max-sm:text-[clamp(2.75rem,11.7vw,4.1rem)] max-sm:leading-[1.02]">
+                Ice Cream <span className="block text-[#f3b23f]">Manufacturing</span> Company
               </h1>
-              <p>
+              <p className="mt-5 max-w-[520px] text-[1.05rem] leading-8 text-white/85">
                 Supplying premium ice cream products to retailers nationwide and expanding
                 distribution across Africa.
               </p>
-              <div className="hero-actions">
-                <Link className="button button-primary" href="#contact">
+              <div className="mt-8 flex flex-wrap gap-4 max-sm:flex-col">
+                <Link className={primaryButton} href="#contact">
                   Request Wholesale Quote
                   <span aria-hidden="true">→</span>
                 </Link>
-                <Link className="button button-ghost" href="#products">
+                <Link className={ghostButton} href="#products">
                   View Our Products
                   <span aria-hidden="true">→</span>
                 </Link>
               </div>
-            </div>
+            </FadeIn>
 
-            <div className="hero-stage reveal reveal-delay-1">
+            <Float className="relative before:absolute before:right-[10%] before:bottom-[5%] before:left-[10%] before:h-11 before:rounded-full before:bg-black/30 before:blur-2xl">
               <Image
+                className="relative z-10 mx-auto w-[min(760px,100%)] drop-shadow-[0_34px_44px_rgba(0,0,0,0.28)]"
                 src="/images/hero-products.png"
                 alt="Pace Heritage ice cream, cones, and dry mix products"
                 width={1391}
                 height={1131}
                 priority
               />
-            </div>
+            </Float>
           </div>
-          <div className="container trust-panel reveal reveal-delay-2">
+
+          <FadeIn
+            className={`${container} mt-8 grid overflow-hidden rounded-2xl border border-white/15 bg-white/[0.08] shadow-[0_22px_60px_rgba(0,0,0,0.22)] backdrop-blur-2xl md:grid-cols-2 lg:grid-cols-4`}
+            delay={0.15}
+          >
             {featureStrip.map((feature) => (
-              <div key={feature} className="trust-item">
-                <span aria-hidden="true" />
-                <strong>{feature}</strong>
+              <div
+                key={feature}
+                className="flex min-h-[92px] items-center gap-3.5 border-white/10 bg-[#021025]/40 px-6 py-4 text-white max-sm:min-h-[74px] lg:border-r last:border-r-0"
+              >
+                <span className={goldIcon} aria-hidden="true" />
+                <strong className="text-sm leading-snug">{feature}</strong>
               </div>
             ))}
-          </div>
+          </FadeIn>
         </section>
 
-        <section className="section product-section" id="products">
-          <div className="container">
+        <section className="bg-[linear-gradient(180deg,#fff_0%,#f4f7fb_100%)] py-20 md:py-24" id="products">
+          <div className={container}>
             <SectionHeader
               title="Our Product Range"
               description="Premium products for retail, foodservice, manufacturing, and private-label growth."
             />
-            <div className="product-grid">
+            <div className="grid gap-5 md:grid-cols-2 xl:grid-cols-3">
               {products.map((product, index) => (
-                <article
-                  className="product-card reveal"
+                <FadeIn
+                  as="article"
+                  className="group flex min-h-[430px] flex-col justify-between overflow-hidden rounded-lg border border-[#07182f]/10 bg-white/85 shadow-[0_18px_55px_rgba(7,24,47,0.08)] transition hover:-translate-y-1.5 hover:shadow-[0_26px_70px_rgba(7,24,47,0.15)]"
+                  delay={index * 0.05}
                   key={product.name}
-                  style={{ animationDelay: `${index * 70}ms` }}
                 >
-                  <div className="product-image">
+                  <div className="grid min-h-[255px] place-items-center bg-gradient-to-b from-[#eef4fb] to-white">
                     <Image
+                      className="h-[255px] w-full object-contain p-4 transition duration-500 group-hover:scale-[1.035]"
                       src={product.image}
                       alt={product.name}
                       width={560}
@@ -83,124 +109,135 @@ export default function Home() {
                       sizes="(max-width: 760px) 92vw, (max-width: 1100px) 45vw, 31vw"
                     />
                   </div>
-                  <div>
-                    <h2>{product.name}</h2>
-                    <p>{product.description}</p>
+                  <div className="p-5">
+                    <h2 className="text-lg font-black text-[#07182f]">{product.name}</h2>
+                    <p className="mt-2.5 leading-7 text-[#637083]">{product.description}</p>
                   </div>
-                </article>
+                </FadeIn>
               ))}
             </div>
           </div>
         </section>
 
-        <section className="split-section dark-section" id="manufacturing">
-          <div className="split-media reveal">
+        <section
+          className="grid min-h-[620px] bg-[radial-gradient(circle_at_74%_32%,rgba(17,166,232,0.22),transparent_26%),linear-gradient(125deg,#061832_0%,#021025_100%)] text-white lg:grid-cols-2"
+          id="manufacturing"
+        >
+          <FadeIn className="min-h-[360px] lg:min-h-[560px]">
             <Image
+              className="h-full w-full object-cover"
               src="/images/manufacturing-excellence.png"
               alt="Modern ice cream manufacturing facility with hygienic production equipment"
               width={1409}
               height={1117}
               sizes="(max-width: 900px) 100vw, 50vw"
             />
-          </div>
-          <div className="split-copy reveal reveal-delay-1">
+          </FadeIn>
+          <FadeIn className="flex flex-col justify-center px-6 py-12 md:px-10 lg:px-[max(40px,calc((100vw-1180px)/2))] lg:py-18 lg:pl-16" delay={0.1}>
             <SectionHeader
               eyebrow="Manufacturing excellence"
               title="Built for Quality. Driven by Innovation."
               description="Our state-of-the-art manufacturing facility ensures the highest standards of quality, food safety, and consistency in every batch."
               light
             />
-            <div className="icon-grid">
+            <div className="mb-8 grid gap-5 sm:grid-cols-2 xl:grid-cols-4">
               {manufacturingFeatures.map((feature) => (
-                <div key={feature} className="icon-stat">
-                  <span aria-hidden="true" />
-                  <p>{feature}</p>
+                <div className="grid justify-items-start gap-3" key={feature}>
+                  <span className={goldIcon} aria-hidden="true" />
+                  <p className="m-0 text-sm leading-snug text-white/85">{feature}</p>
                 </div>
               ))}
             </div>
-            <Link className="button button-primary" href="#contact">
+            <Link className={primaryButton} href="#contact">
               Explore Our Manufacturing
               <span aria-hidden="true">→</span>
             </Link>
-          </div>
+          </FadeIn>
         </section>
 
-        <section className="section ingredients-section">
-          <div className="container ingredients-grid">
-            <div className="reveal">
+        <section className="bg-white py-20 md:py-24">
+          <div className={`${container} grid items-center gap-12 lg:grid-cols-[minmax(0,0.78fr)_minmax(420px,1fr)]`}>
+            <FadeIn>
               <SectionHeader
                 eyebrow="Manufacturing ingredients"
                 title="Reliable Inputs for Consistent Output."
                 description="From dry mix to cones and premix solutions, Pace Heritage supports producers and foodservice operators with dependable ingredient formats."
               />
-              <div className="stats-row">
+              <div className="mt-6 grid gap-3.5 sm:grid-cols-3">
                 {stats.map((stat) => (
-                  <div key={stat.label}>
-                    <strong>{stat.value}</strong>
-                    <span>{stat.label}</span>
+                  <div className="rounded-lg border border-[#07182f]/10 bg-[#f8fbff] p-4.5" key={stat.label}>
+                    <strong className="block font-serif text-3xl leading-none text-[#d99524]">{stat.value}</strong>
+                    <span className="mt-2 block text-sm leading-6 text-[#637083]">{stat.label}</span>
                   </div>
                 ))}
               </div>
-            </div>
-            <div className="ingredients-image reveal reveal-delay-1">
+            </FadeIn>
+            <FadeIn className="overflow-hidden rounded-lg shadow-[0_24px_70px_rgba(7,24,47,0.16)]" delay={0.1}>
               <Image
+                className="h-auto w-full"
                 src="/images/manufacturing-ingredients.png"
                 alt="Manufacturing ingredients including soft ice cream premix and cones"
                 width={1672}
                 height={941}
                 sizes="(max-width: 900px) 100vw, 46vw"
               />
-            </div>
+            </FadeIn>
           </div>
         </section>
 
-        <section className="distribution-section" id="distribution">
-          <div className="container distribution-grid">
-            <div className="distribution-copy reveal">
+        <section
+          className="overflow-hidden bg-[radial-gradient(circle_at_74%_32%,rgba(17,166,232,0.22),transparent_26%),linear-gradient(125deg,#061832_0%,#021025_100%)] py-20 text-white md:py-24"
+          id="distribution"
+        >
+          <div className={`${container} grid items-center gap-8 lg:grid-cols-[minmax(280px,0.7fr)_minmax(360px,1.3fr)]`}>
+            <FadeIn className="relative z-10">
               <SectionHeader
                 eyebrow="Distribution across Africa"
                 title="Expanding Horizons. Delivering Excellence."
                 description="Pace Heritage supplies premium ice cream to retailers across Nigeria and is expanding into other African markets."
                 light
               />
-              <Link className="button button-ghost" href="#contact">
+              <Link className={ghostButton} href="#contact">
                 Become a Distributor
                 <span aria-hidden="true">→</span>
               </Link>
-            </div>
-            <div className="map-wrap reveal reveal-delay-1">
+            </FadeIn>
+            <FadeIn delay={0.1}>
               <Image
+                className="w-full drop-shadow-[0_30px_55px_rgba(0,0,0,0.3)]"
                 src="/images/distribution-africa.png"
                 alt="Distribution map highlighting Nigeria and expansion across Africa"
                 width={1724}
                 height={912}
                 sizes="(max-width: 900px) 100vw, 58vw"
               />
-            </div>
-            <div className="distribution-list reveal reveal-delay-2">
+            </FadeIn>
+            <FadeIn className="grid gap-3 md:grid-cols-2 lg:col-start-2" delay={0.16}>
               {distributionFeatures.map((feature) => (
-                <p key={feature}>{feature}</p>
+                <p className="m-0 rounded-lg border border-white/15 bg-white/[0.06] px-4 py-3.5 text-white/85" key={feature}>
+                  {feature}
+                </p>
               ))}
-            </div>
+            </FadeIn>
           </div>
         </section>
 
-        <section className="section private-section" id="private-label">
-          <div className="container private-grid">
-            <div className="reveal">
+        <section className="bg-[linear-gradient(180deg,#fff_0%,#f3f6fb_100%)] py-20 md:py-24" id="private-label">
+          <div className={`${container} grid items-center gap-10 lg:grid-cols-[minmax(0,0.78fr)_minmax(420px,1fr)]`}>
+            <FadeIn>
               <SectionHeader
                 eyebrow="Private label manufacturing"
                 title="Your Brand. Our Expertise. Endless Possibilities."
                 description="We help brands bring their vision to life with custom formulations, premium ingredients, and world-class manufacturing."
               />
-              <Link className="button button-primary" href="#contact">
+              <Link className={primaryButton} href="#contact">
                 Start Your Private Label Journey
                 <span aria-hidden="true">→</span>
               </Link>
-            </div>
-            <div className="private-images reveal reveal-delay-1">
+            </FadeIn>
+            <FadeIn className="relative min-h-[260px] md:min-h-[330px] lg:min-h-[390px]" delay={0.1}>
               <Image
-                className="badge"
+                className="absolute top-0 left-[4%] z-10 h-[104px] w-[104px] rounded-full shadow-[0_18px_34px_rgba(7,24,47,0.18)] md:h-[138px] md:w-[138px]"
                 src="/images/anniversary-badge.png"
                 alt="30 years since 1995 badge"
                 width={1254}
@@ -208,29 +245,47 @@ export default function Home() {
                 sizes="160px"
               />
               <Image
+                className="absolute right-0 bottom-0 w-[min(620px,100%)] drop-shadow-[0_28px_40px_rgba(7,24,47,0.16)]"
                 src="/images/product-private-label.png"
                 alt="Private label ice cream packaging"
                 width={1536}
                 height={1024}
                 sizes="(max-width: 900px) 90vw, 48vw"
               />
-            </div>
+            </FadeIn>
           </div>
         </section>
 
-        <section className="retailers">
-          <div className="container reveal">
-            <p className="eyebrow">Trusted by leading retailers</p>
-            <div className="retailer-row" aria-label="Retailer partners">
-              {retailers.map((retailer) => (
-                <span key={retailer}>{retailer}</span>
+        <section className="bg-[#f3f6fb] pb-16">
+          <FadeIn className={`${container} rounded-lg border border-[#07182f]/10 bg-white p-7 text-center shadow-[0_18px_50px_rgba(7,24,47,0.08)]`}>
+            <p className="mb-3.5 text-xs font-black uppercase tracking-[0.08em] text-[#f3b23f]">
+              Trusted by leading retailers
+            </p>
+            <div className="grid items-center gap-5 md:grid-cols-5" aria-label="Retailer partners">
+              {retailers.map((retailer, index) => (
+                <span
+                  className={[
+                    "text-[clamp(1.05rem,2.2vw,1.55rem)] font-black",
+                    index < 2 ? "text-[#e3262e]" : "",
+                    index === 2 ? "text-[#8a4a2e]" : "",
+                    index === 3 ? "text-[#17406c]" : "",
+                    index === 4 ? "text-[#18844d]" : "",
+                  ].join(" ")}
+                  key={retailer}
+                >
+                  {retailer}
+                </span>
               ))}
             </div>
-          </div>
+          </FadeIn>
         </section>
       </main>
       <Footer />
-      <Link className="whatsapp" href="https://wa.me/2348031234567" aria-label="Chat on WhatsApp">
+      <Link
+        className="fixed right-6 bottom-6 z-40 grid h-14 w-14 place-items-center rounded-full bg-[#24d366] text-sm font-black text-white shadow-[0_16px_36px_rgba(36,211,102,0.32)] max-sm:right-4 max-sm:bottom-4 max-sm:h-13 max-sm:w-13"
+        href="https://wa.me/2348031234567"
+        aria-label="Chat on WhatsApp"
+      >
         WA
       </Link>
     </>

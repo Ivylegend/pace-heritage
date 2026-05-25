@@ -44,10 +44,10 @@ export const metadata: Metadata = {
       "Premium ice cream products, manufacturing ingredients, cones, and private label solutions across Nigeria and Africa.",
     images: [
       {
-        url: "/images/hero-products.png",
-        width: 1391,
-        height: 1131,
-        alt: "Pace Heritage ice cream products",
+        url: "/images/paceheritage-og.png",
+        width: 1200,
+        height: 630,
+        alt: "Pace Heritage sign",
       },
     ],
   },
@@ -56,10 +56,11 @@ export const metadata: Metadata = {
     title: "Pace Heritage | Premium Ice Cream Manufacturing Company",
     description:
       "Premium ice cream products, manufacturing ingredients, cones, and private label solutions across Nigeria and Africa.",
-    images: ["/images/hero-products.png"],
+    images: ["/images/paceheritage-og.png"],
   },
   icons: {
     icon: "/icon.png",
+    shortcut: "/icon.png",
     apple: "/apple-icon.png",
   },
 };
