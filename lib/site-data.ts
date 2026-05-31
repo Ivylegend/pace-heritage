@@ -3,7 +3,7 @@ export const navigation = [
   { label: "Manufacturing", href: "#manufacturing" },
   { label: "Private Label", href: "#private-label" },
   { label: "Distribution", href: "#distribution" },
-  { label: "About", href: "#about" },
+  { label: "About", href: "/about" },
   { label: "Contact", href: "#contact" },
 ];
 

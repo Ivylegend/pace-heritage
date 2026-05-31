@@ -21,10 +21,12 @@ export function Navbar() {
   }, []);
 
   return (
-    <header className={`fixed inset-x-0 z-50 transition-all duration-500 ${scrolled ? "top-2" : "top-[18px]"}`}>
+    <header
+      className={`fixed inset-x-0 z-50 transition-all duration-500 ${scrolled ? "top-2" : "top-[18px]"}`}
+    >
       <motion.div
         className={[
-          "mx-auto flex w-[min(1180px,calc(100%_-_40px))] items-center justify-between gap-5 rounded-[20px] border px-5 py-3.5 shadow-[0_18px_60px_rgba(0,0,0,0.22)] backdrop-blur-[18px] transition-all duration-500 max-sm:w-[calc(100%_-_28px)] max-sm:rounded-2xl max-sm:px-3.5",
+          "mx-auto flex w-[min(1180px,calc(100%-40px))] items-center justify-between gap-5 rounded-[20px] border px-5 py-3.5 shadow-[0_18px_60px_rgba(0,0,0,0.22)] backdrop-blur-[18px] transition-all duration-500 max-sm:w-[calc(100%-28px)] max-sm:rounded-2xl max-sm:px-3.5",
           scrolled
             ? "min-h-16 border-[#d99524]/30 bg-[#021025]/90"
             : "min-h-[78px] border-white/15 bg-[#021025]/60",
@@ -33,7 +35,11 @@ export function Navbar() {
         animate={{ y: 0, opacity: 1 }}
         transition={{ duration: 0.7, ease: [0.19, 1, 0.22, 1] }}
       >
-        <Link className="relative block h-12 w-[210px] max-sm:w-[178px]" href="/" aria-label="Pace Heritage home">
+        <Link
+          className="relative block h-12 w-[210px] max-sm:w-[178px]"
+          href="/"
+          aria-label="Pace Heritage home"
+        >
           <Image
             className="h-full w-full object-contain object-left"
             src="/images/paceheritage-sign-source.png"
@@ -44,7 +50,10 @@ export function Navbar() {
           />
         </Link>
 
-        <nav className="hidden items-center gap-6 lg:flex" aria-label="Primary navigation">
+        <nav
+          className="hidden items-center gap-6 lg:flex"
+          aria-label="Primary navigation"
+        >
           {navigation.map((item) => (
             <Link className={linkClass} key={item.href} href={item.href}>
               {item.label}
@@ -53,7 +62,7 @@ export function Navbar() {
         </nav>
 
         <Link
-          className="hidden min-h-12 items-center justify-center gap-3 rounded-[10px] bg-gradient-to-br from-[#c8791c] to-[#f3b23f] px-5 text-sm font-black text-white shadow-[0_14px_34px_rgba(217,149,36,0.32)] transition hover:-translate-y-0.5 hover:shadow-[0_18px_44px_rgba(217,149,36,0.36)] lg:inline-flex"
+          className="hidden min-h-12 items-center justify-center gap-3 rounded-[10px] bg-linear-to-br from-[#c8791c] to-[#f3b23f] px-5 text-sm font-black text-white shadow-[0_14px_34px_rgba(217,149,36,0.32)] transition hover:-translate-y-0.5 hover:shadow-[0_18px_44px_rgba(217,149,36,0.36)] lg:inline-flex"
           href="#contact"
         >
           Request Quote
@@ -86,7 +95,7 @@ export function Navbar() {
           >
             {navigation.map((item) => (
               <Link
-                className="bg-white/[0.03] px-5 py-4 font-bold text-white"
+                className="bg-white/3 px-5 py-4 font-bold text-white"
                 key={item.href}
                 href={item.href}
                 onClick={() => setOpen(false)}
@@ -94,7 +103,11 @@ export function Navbar() {
                 {item.label}
               </Link>
             ))}
-            <Link className="bg-white/[0.03] px-5 py-4 font-bold text-white" href="#contact" onClick={() => setOpen(false)}>
+            <Link
+              className="bg-white/3 px-5 py-4 font-bold text-white"
+              href="#contact"
+              onClick={() => setOpen(false)}
+            >
               Request Quote
             </Link>
           </motion.div>
