@@ -1,6 +1,5 @@
 "use client";
 
-import React from "react";
 import { Award, Zap, Users, ShieldCheck } from "lucide-react";
 import { Navbar } from "@/components/Navbar";
 import { Footer } from "@/components/Footer";
@@ -105,6 +104,8 @@ export default function AboutPage() {
               <Image
                 src="https://raw.createusercontent.com/9da64afb-14f4-4997-a4b3-30d40561424a/"
                 alt="Premium Ice Cream"
+                width={600}
+                height={500}
                 className="relative rounded-3xl shadow-2xl w-full h-[500px] object-cover border-4 border-white/10"
               />
             </div>
@@ -139,6 +140,8 @@ export default function AboutPage() {
                     <Image
                       src={item.image}
                       alt={item.title}
+                      width={600}
+                      height={400}
                       className="relative rounded-xl shadow-lg w-full h-[400px] object-cover grayscale-20% group-hover:grayscale-0 transition-all duration-500"
                     />
                   </div>
