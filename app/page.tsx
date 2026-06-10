@@ -251,6 +251,7 @@ export default function Home() {
                 alt="Manufacturing ingredients including soft ice cream premix and cones"
                 width={1672}
                 height={941}
+                loading="eager"
                 sizes="(max-width: 900px) 100vw, 46vw"
               />
             </FadeIn>
@@ -266,10 +267,11 @@ export default function Home() {
         aria-label="Chat on WhatsApp"
       >
         <Image
-          src={"/icons/whatsapp.svg"}
+          src="/icons/whatsapp.svg"
           width={32}
           height={32}
           alt="whatsapp"
+          loading="eager"
         />
       </Link>
     </>
