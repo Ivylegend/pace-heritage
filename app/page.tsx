@@ -14,6 +14,7 @@ import {
   DistributionSection,
   PrivateLabelSection,
 } from "@/components/HomeAnimations";
+import ProductCardsSection from "@/components/ProductSection";
 
 const container =
   "mx-auto w-[min(1180px,calc(100%_-_40px))] max-sm:w-[calc(100%_-_28px)]";
@@ -65,6 +66,7 @@ export default function Home() {
               />
             </SlideIn>
             <ProductGrid products={products} />
+            <ProductCardsSection />
           </div>
         </section>
 
