@@ -5,11 +5,9 @@ import { SlideIn } from "@/components/Motion";
 import { Navbar } from "@/components/Navbar";
 import { Retailers } from "@/components/Retailers";
 import { SectionHeader } from "@/components/SectionHeader";
-import { products } from "@/lib/site-data";
 import {
   HeroAnimations,
   StatsStrip,
-  ProductGrid,
   MfgFeatures,
   DistributionSection,
   PrivateLabelSection,
@@ -65,7 +63,7 @@ export default function Home() {
                 description="Premium products for retail, foodservice, manufacturing, and private-label growth."
               />
             </SlideIn>
-            <ProductGrid products={products} />
+            {/* <ProductGrid products={products} /> */}
             <ProductCardsSection />
           </div>
         </section>
