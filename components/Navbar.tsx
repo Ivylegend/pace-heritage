@@ -8,7 +8,7 @@ import { useEffect, useState } from "react";
 import { navigation } from "@/lib/site-data";
 
 const linkClass =
-  "relative text-sm font-bold text-white/90 transition hover:text-white after:absolute after:-bottom-2.5 after:left-0 after:h-0.5 after:w-0 after:bg-[#f3b23f] after:transition-all hover:after:w-full";
+  "relative text-sm font-medium text-white/90 transition hover:text-white after:absolute after:-bottom-2.5 after:left-0 after:h-0.5 after:w-0 after:bg-[#f3b23f] after:transition-all hover:after:w-full";
 
 export function Navbar() {
   const [open, setOpen] = useState(false);
@@ -63,7 +63,7 @@ export function Navbar() {
         </nav>
 
         <Link
-          className="hidden min-h-12 items-center justify-center gap-3 rounded-[10px] bg-linear-to-br from-[#c8791c] to-[#f3b23f] px-5 text-sm font-black text-white shadow-[0_14px_34px_rgba(217,149,36,0.32)] transition hover:-translate-y-0.5 hover:shadow-[0_18px_44px_rgba(217,149,36,0.36)] lg:inline-flex"
+          className="hidden min-h-12 items-center justify-center gap-3 rounded-[10px] bg-linear-to-br from-[#c8791c] to-[#f3b23f] px-5 text-sm font-medium text-white shadow-[0_14px_34px_rgba(217,149,36,0.32)] transition hover:-translate-y-0.5 hover:shadow-[0_18px_44px_rgba(217,149,36,0.36)] lg:inline-flex"
           href="#contact"
         >
           Request Quote
@@ -96,7 +96,7 @@ export function Navbar() {
           >
             {navigation.map((item) => (
               <Link
-                className="bg-white/3 px-5 py-4 font-bold text-white"
+                className="bg-white/3 px-5 py-4 font-medium text-white"
                 key={item.href}
                 href={item.href}
                 onClick={() => setOpen(false)}
@@ -105,7 +105,7 @@ export function Navbar() {
               </Link>
             ))}
             <Link
-              className="bg-white/3 px-5 py-4 font-bold text-white"
+              className="bg-white/3 px-5 py-4 font-medium text-white"
               href="#contact"
               onClick={() => setOpen(false)}
             >

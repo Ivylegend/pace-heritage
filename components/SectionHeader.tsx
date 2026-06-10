@@ -21,7 +21,7 @@ export function SectionHeader({
       ].join(" ")}
     >
       {eyebrow ? (
-        <p className="mb-3.5 text-xs font-black uppercase tracking-[0.08em] text-[#f3b23f]">
+        <p className="mb-3.5 text-xs font-medium uppercase tracking-[0.08em] text-[#f3b23f]">
           {eyebrow}
         </p>
       ) : null}

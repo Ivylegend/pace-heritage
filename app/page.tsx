@@ -1,15 +1,13 @@
 import Image from "next/image";
 import Link from "next/link";
-import { ArrowRight } from "lucide-react";
+import { ArrowRight, Cpu, ShieldCheck, Award, TrendingUp, Truck, Crown, Clock, Handshake } from "lucide-react";
 import { Footer } from "@/components/Footer";
 import { FadeIn } from "@/components/Motion";
 import { Navbar } from "@/components/Navbar";
+import { Retailers } from "@/components/Retailers";
 import { SectionHeader } from "@/components/SectionHeader";
 import {
-  featureStrip,
-  manufacturingFeatures,
   products,
-  retailers,
 } from "@/lib/site-data";
 
 const container =
@@ -18,8 +16,19 @@ const primaryButton =
   "inline-flex min-h-12 items-center justify-center gap-3 rounded-[10px] bg-gradient-to-br from-[#c8791c] to-[#f3b23f] px-6 text-sm font-black text-white shadow-[0_14px_34px_rgba(217,149,36,0.32)] transition hover:-translate-y-0.5 hover:shadow-[0_18px_44px_rgba(217,149,36,0.36)] max-sm:w-full";
 const ghostButton =
   "inline-flex min-h-12 items-center justify-center gap-3 rounded-[10px] border border-white/35 bg-white/[0.06] px-6 text-sm font-black text-white transition hover:-translate-y-0.5 hover:border-white/65 hover:shadow-[0_16px_40px_rgba(0,0,0,0.18)] max-sm:w-full";
-const goldIcon =
-  "h-10 w-10 shrink-0 rounded-full border-2 border-[#f3b23f] bg-[linear-gradient(90deg,transparent_45%,#f3b23f_45%_55%,transparent_55%),linear-gradient(transparent_45%,#f3b23f_45%_55%,transparent_55%)]";
+const mfgFeatures = [
+  { label: "Advanced technology", icon: Cpu },
+  { label: "Hygienic production", icon: ShieldCheck },
+  { label: "Quality assurance", icon: Award },
+  { label: "Scalable capacity", icon: TrendingUp },
+];
+
+const stripFeatures = [
+  { label: "Nationwide Distribution", icon: Truck },
+  { label: "Premium Quality", icon: Crown },
+  { label: "Consistent Supply", icon: Clock },
+  { label: "Trusted by Retailers", icon: Handshake },
+];
 
 export default function Home() {
   return (
@@ -27,7 +36,7 @@ export default function Home() {
       <Navbar />
       <main>
         <section
-          className="relative isolate min-h-[760px] overflow-hidden bg-[radial-gradient(circle_at_66%_35%,rgba(17,166,232,0.28),transparent_33%),linear-gradient(125deg,#05142b_0%,#071a34_48%,#020d20_100%)] pt-[150px] pb-8 text-white max-lg:min-h-0 max-lg:pt-32 max-sm:pt-28"
+          className="relative isolate min-h-[760px] lg:h-screen overflow-hidden bg-[radial-gradient(circle_at_66%_35%,rgba(17,166,232,0.28),transparent_33%),linear-gradient(125deg,#05142b_0%,#071a34_48%,#020d20_100%)] pt-[150px] pb-8 text-white max-lg:min-h-0 max-lg:pt-32 max-sm:pt-28"
           id="about"
         >
           <Image
@@ -45,7 +54,7 @@ export default function Home() {
             className={`${container} grid items-center gap-6 lg:grid-cols-[minmax(560px,0.9fr)_minmax(0,1.1fr)]`}
           >
             <FadeIn className="max-w-xl">
-              <p className="mb-3.5 text-xs font-black uppercase tracking-[0.08em] text-[#f3b23f]">
+              <p className="mb-3.5 text-xs font-medium uppercase tracking-[0.08em] text-[#f3b23f]">
                 Nigeria&apos;s leading
               </p>
               <h1 className="font-serif text-[clamp(3.1rem,5.1vw,4.25rem)] leading-[0.96] max-sm:text-[clamp(2.75rem,11.7vw,4.1rem)] max-sm:leading-[1.02]">
@@ -70,7 +79,7 @@ export default function Home() {
             </FadeIn>
 
             <Image
-              className="relative z-10 mx-auto w-[min(760px,100%)] drop-shadow-[0_34px_44px_rgba(0,0,0,0.28)] lg:translate-y-10 lg:drop-shadow-[0_48px_58px_rgba(0,0,0,0.38)] lg:scale-160"
+              className="relative z-10 mx-auto w-[min(760px,100%)] drop-shadow-[0_34px_44px_rgba(0,0,0,0.28)] translate-x-10 lg:translate-x-20 lg:translate-y-10 lg:drop-shadow-[0_48px_58px_rgba(0,0,0,0.38)] scale-160"
               src="/images/hero-2.png"
               alt="Pace Heritage ice cream, cones, and dry mix products"
               width={1391}
@@ -80,16 +89,18 @@ export default function Home() {
           </div>
 
           <FadeIn
-            className={`${container} mt-8 grid overflow-hidden rounded-2xl border border-white/15 bg-white/8 shadow-[0_22px_60px_rgba(0,0,0,0.22)] backdrop-blur-2xl md:grid-cols-2 lg:grid-cols-4`}
+            className={`${container} mt-8 lg:mt-20 grid overflow-hidden rounded-2xl border border-white/15 bg-white/8 shadow-[0_22px_60px_rgba(0,0,0,0.22)] backdrop-blur-2xl md:grid-cols-2 lg:grid-cols-4`}
             delay={0.15}
           >
-            {featureStrip.map((feature) => (
+            {stripFeatures.map(({ label, icon: Icon }) => (
               <div
-                key={feature}
+                key={label}
                 className="flex min-h-[92px] items-center gap-3.5 border-white/10 bg-[#021025]/40 px-6 py-4 text-white max-sm:min-h-[74px] lg:border-r last:border-r-0"
               >
-                <span className={goldIcon} aria-hidden="true" />
-                <strong className="text-sm leading-snug">{feature}</strong>
+                <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full border-2 border-[#f3b23f] text-[#f3b23f]" aria-hidden="true">
+                  <Icon className="h-5 w-5" />
+                </div>
+                <strong className="text-sm leading-snug">{label}</strong>
               </div>
             ))}
           </FadeIn>
@@ -161,12 +172,14 @@ export default function Home() {
               description="Our state-of-the-art manufacturing facility ensures the highest standards of quality, food safety, and consistency in every batch."
               light
             />
-            <div className="mb-8 grid gap-5 sm:grid-cols-2 xl:grid-cols-4">
-              {manufacturingFeatures.map((feature) => (
-                <div className="grid justify-items-start gap-3" key={feature}>
-                  <span className={goldIcon} aria-hidden="true" />
+            <div className="mb-8 grid gap-4.5 sm:grid-cols-2 sm:gap-5 xl:grid-cols-4">
+              {mfgFeatures.map(({ label, icon: Icon }) => (
+                <div className="flex items-center gap-3.5 sm:flex-col sm:items-start sm:gap-3" key={label}>
+                  <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full border-2 border-[#f3b23f] text-[#f3b23f]" aria-hidden="true">
+                    <Icon className="h-5 w-5" />
+                  </div>
                   <p className="m-0 text-sm leading-snug text-white/85">
-                    {feature}
+                    {label}
                   </p>
                 </div>
               ))}
@@ -244,59 +257,7 @@ export default function Home() {
           </div>
         </section>
 
-        <section className="bg-white pb-16">
-          <FadeIn
-            className={`${container} rounded-lg border border-[#07182f]/10 bg-white p-7 text-center shadow-[0_18px_50px_rgba(7,24,47,0.08)]`}
-          >
-            <p className="mb-3.5 text-xs font-black uppercase tracking-[0.08em] text-[#f3b23f]">
-              Trusted by leading retailers
-            </p>
-            <div
-              className="grid items-center gap-5 md:grid-cols-5"
-              aria-label="Retailer partners"
-            >
-              {retailers.map((retailer, index) => {
-                if (index === 0) {
-                  return (
-                    <Image
-                      key={retailer}
-                      src="/icons/spar-logo.png"
-                      alt="SPAR Logo"
-                      width={120}
-                      height={32}
-                      className="mx-auto h-8 w-auto object-contain transition duration-300 hover:scale-105"
-                    />
-                  );
-                }
-                if (index === 1) {
-                  return (
-                    <Image
-                      key={retailer}
-                      src="/icons/shoprite.png"
-                      alt="Shoprite Logo"
-                      width={120}
-                      height={32}
-                      className="mx-auto h-8 w-auto object-contain transition duration-300 hover:scale-105"
-                    />
-                  );
-                }
-                return (
-                  <span
-                    className={[
-                      "text-[clamp(1.05rem,2.2vw,1.55rem)] font-black",
-                      index === 2 ? "text-[#8a4a2e]" : "",
-                      index === 3 ? "text-[#17406c]" : "",
-                      index === 4 ? "text-[#18844d]" : "",
-                    ].join(" ")}
-                    key={retailer}
-                  >
-                    {retailer}
-                  </span>
-                );
-              })}
-            </div>
-          </FadeIn>
-        </section>
+        <Retailers />
       </main>
       <Footer />
       <Link
