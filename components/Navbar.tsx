@@ -1,6 +1,7 @@
 "use client";
 
 import { AnimatePresence, motion } from "framer-motion";
+import { ArrowRight } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
 import { useEffect, useState } from "react";
@@ -66,7 +67,7 @@ export function Navbar() {
           href="#contact"
         >
           Request Quote
-          <span aria-hidden="true">→</span>
+          <ArrowRight className="h-4 w-4" />
         </Link>
 
         <button

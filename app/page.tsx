@@ -1,16 +1,15 @@
 import Image from "next/image";
 import Link from "next/link";
+import { ArrowRight } from "lucide-react";
 import { Footer } from "@/components/Footer";
 import { FadeIn } from "@/components/Motion";
 import { Navbar } from "@/components/Navbar";
 import { SectionHeader } from "@/components/SectionHeader";
 import {
-  distributionFeatures,
   featureStrip,
   manufacturingFeatures,
   products,
   retailers,
-  stats,
 } from "@/lib/site-data";
 
 const container =
@@ -61,18 +60,18 @@ export default function Home() {
               <div className="mt-8 flex flex-wrap gap-4 max-sm:flex-col">
                 <Link className={primaryButton} href="#contact">
                   Request Wholesale Quote
-                  <span aria-hidden="true">→</span>
+                  <ArrowRight className="h-4 w-4" />
                 </Link>
                 <Link className={ghostButton} href="#products">
                   View Our Products
-                  <span aria-hidden="true">→</span>
+                  <ArrowRight className="h-4 w-4" />
                 </Link>
               </div>
             </FadeIn>
 
             <Image
-              className="relative z-10 mx-auto w-[min(760px,100%)] drop-shadow-[0_34px_44px_rgba(0,0,0,0.28)] lg:translate-y-10 lg:drop-shadow-[0_48px_58px_rgba(0,0,0,0.38)] lg:scale-120"
-              src="/images/hero-image.png"
+              className="relative z-10 mx-auto w-[min(760px,100%)] drop-shadow-[0_34px_44px_rgba(0,0,0,0.28)] lg:translate-y-10 lg:drop-shadow-[0_48px_58px_rgba(0,0,0,0.38)] lg:scale-160"
+              src="/images/hero-2.png"
               alt="Pace Heritage ice cream, cones, and dry mix products"
               width={1391}
               height={1131}
@@ -141,7 +140,7 @@ export default function Home() {
           className="grid min-h-[620px] bg-[radial-gradient(circle_at_74%_32%,rgba(17,166,232,0.22),transparent_26%),linear-gradient(125deg,#061832_0%,#021025_100%)] text-white lg:grid-cols-2"
           id="manufacturing"
         >
-          <FadeIn className="min-h-[360px] lg:min-h-[560px]">
+          <FadeIn className="relative min-h-[360px] overflow-hidden lg:min-h-[560px]">
             <Image
               className="h-full w-full object-cover"
               src="/images/manufacturing-excellence.png"
@@ -150,6 +149,7 @@ export default function Home() {
               height={1117}
               sizes="(max-width: 900px) 100vw, 50vw"
             />
+            <div className="absolute inset-0 bg-linear-to-r from-transparent to-black/40 pointer-events-none" />
           </FadeIn>
           <FadeIn
             className="flex flex-col justify-center px-6 py-12 md:px-10 lg:px-[max(40px,calc((100vw-1180px)/2))] lg:py-18 lg:pl-16"
@@ -173,55 +173,13 @@ export default function Home() {
             </div>
             <Link className={primaryButton} href="#contact">
               Explore Our Manufacturing
-              <span aria-hidden="true">→</span>
+              <ArrowRight className="h-4 w-4" />
             </Link>
           </FadeIn>
         </section>
 
-        <section className="bg-white py-20 md:py-24">
-          <div
-            className={`${container} grid items-center gap-12 lg:grid-cols-[minmax(0,0.78fr)_minmax(420px,1fr)]`}
-          >
-            <FadeIn>
-              <SectionHeader
-                eyebrow="Manufacturing ingredients"
-                title="Reliable Inputs for Consistent Output."
-                description="From dry mix to cones and premix solutions, Pace Heritage supports producers and foodservice operators with dependable ingredient formats."
-              />
-              <div className="mt-6 grid gap-3.5 sm:grid-cols-3">
-                {stats.map((stat) => (
-                  <div
-                    className="rounded-lg border border-[#07182f]/10 bg-[#f8fbff] p-4.5"
-                    key={stat.label}
-                  >
-                    <strong className="block font-serif text-3xl leading-none text-[#d99524]">
-                      {stat.value}
-                    </strong>
-                    <span className="mt-2 block text-sm leading-6 text-[#637083]">
-                      {stat.label}
-                    </span>
-                  </div>
-                ))}
-              </div>
-            </FadeIn>
-            <FadeIn
-              className="overflow-hidden rounded-lg shadow-[0_24px_70px_rgba(7,24,47,0.16)]"
-              delay={0.1}
-            >
-              <Image
-                className="h-auto w-full"
-                src="/images/manufacturing-ingredients.png"
-                alt="Manufacturing ingredients including soft ice cream premix and cones"
-                width={1672}
-                height={941}
-                sizes="(max-width: 900px) 100vw, 46vw"
-              />
-            </FadeIn>
-          </div>
-        </section>
-
         <section
-          className="overflow-hidden bg-[radial-gradient(circle_at_74%_32%,rgba(17,166,232,0.22),transparent_26%),linear-gradient(125deg,#061832_0%,#021025_100%)] py-20 text-white md:py-24"
+          className="overflow-hidden bg-[radial-gradient(circle_at_74%_32%,rgba(17,166,232,0.22),transparent_26%),linear-gradient(125deg,#061832_0%,#021025_100%)] bg-[#001034] py-20 text-white md:py-24"
           id="distribution"
         >
           <div
@@ -236,37 +194,24 @@ export default function Home() {
               />
               <Link className={ghostButton} href="#contact">
                 Become a Distributor
-                <span aria-hidden="true">→</span>
+                <ArrowRight className="h-4 w-4" />
               </Link>
             </FadeIn>
             <FadeIn delay={0.1}>
               <Image
-                className="w-full drop-shadow-[0_30px_55px_rgba(0,0,0,0.3)]"
-                src="/images/distribution-africa.png"
+                className="w-full"
+                src="/images/distribution_africa_bg_removed.png"
                 alt="Distribution map highlighting Nigeria and expansion across Africa"
                 width={1724}
                 height={912}
                 sizes="(max-width: 900px) 100vw, 58vw"
               />
             </FadeIn>
-            <FadeIn
-              className="grid gap-3 md:grid-cols-2 lg:col-start-2"
-              delay={0.16}
-            >
-              {distributionFeatures.map((feature) => (
-                <p
-                  className="m-0 rounded-lg border border-white/15 bg-white/6 px-4 py-3.5 text-white/85"
-                  key={feature}
-                >
-                  {feature}
-                </p>
-              ))}
-            </FadeIn>
           </div>
         </section>
 
         <section
-          className="bg-[linear-gradient(180deg,#fff_0%,#f3f6fb_100%)] py-20 md:py-24"
+          className="bg-white py-20 md:py-24"
           id="private-label"
         >
           <div
@@ -280,34 +225,26 @@ export default function Home() {
               />
               <Link className={primaryButton} href="#contact">
                 Start Your Private Label Journey
-                <span aria-hidden="true">→</span>
+                <ArrowRight className="h-4 w-4" />
               </Link>
             </FadeIn>
             <FadeIn
-              className="relative min-h-[260px] md:min-h-[330px] lg:min-h-[390px]"
+              className="overflow-hidden"
               delay={0.1}
             >
               <Image
-                className="absolute top-0 left-[4%] z-10 h-[104px] w-[104px] rounded-full shadow-[0_18px_34px_rgba(7,24,47,0.18)] md:h-[138px] md:w-[138px]"
-                src="/images/anniversary-badge.png"
-                alt="30 years since 1995 badge"
-                width={1254}
-                height={1254}
-                sizes="160px"
-              />
-              <Image
-                className="absolute right-0 bottom-0 w-[min(620px,100%)] drop-shadow-[0_28px_40px_rgba(7,24,47,0.16)]"
-                src="/images/product-private-label.png"
-                alt="Private label ice cream packaging"
-                width={1536}
-                height={1024}
-                sizes="(max-width: 900px) 90vw, 48vw"
+                className="h-auto w-full"
+                src="/images/manufacturing-ingredients.png"
+                alt="Manufacturing ingredients including soft ice cream premix and cones"
+                width={1672}
+                height={941}
+                sizes="(max-width: 900px) 100vw, 46vw"
               />
             </FadeIn>
           </div>
         </section>
 
-        <section className="bg-[#f3f6fb] pb-16">
+        <section className="bg-white pb-16">
           <FadeIn
             className={`${container} rounded-lg border border-[#07182f]/10 bg-white p-7 text-center shadow-[0_18px_50px_rgba(7,24,47,0.08)]`}
           >
@@ -318,20 +255,45 @@ export default function Home() {
               className="grid items-center gap-5 md:grid-cols-5"
               aria-label="Retailer partners"
             >
-              {retailers.map((retailer, index) => (
-                <span
-                  className={[
-                    "text-[clamp(1.05rem,2.2vw,1.55rem)] font-black",
-                    index < 2 ? "text-[#e3262e]" : "",
-                    index === 2 ? "text-[#8a4a2e]" : "",
-                    index === 3 ? "text-[#17406c]" : "",
-                    index === 4 ? "text-[#18844d]" : "",
-                  ].join(" ")}
-                  key={retailer}
-                >
-                  {retailer}
-                </span>
-              ))}
+              {retailers.map((retailer, index) => {
+                if (index === 0) {
+                  return (
+                    <Image
+                      key={retailer}
+                      src="/icons/spar-logo.png"
+                      alt="SPAR Logo"
+                      width={120}
+                      height={32}
+                      className="mx-auto h-8 w-auto object-contain transition duration-300 hover:scale-105"
+                    />
+                  );
+                }
+                if (index === 1) {
+                  return (
+                    <Image
+                      key={retailer}
+                      src="/icons/shoprite.png"
+                      alt="Shoprite Logo"
+                      width={120}
+                      height={32}
+                      className="mx-auto h-8 w-auto object-contain transition duration-300 hover:scale-105"
+                    />
+                  );
+                }
+                return (
+                  <span
+                    className={[
+                      "text-[clamp(1.05rem,2.2vw,1.55rem)] font-black",
+                      index === 2 ? "text-[#8a4a2e]" : "",
+                      index === 3 ? "text-[#17406c]" : "",
+                      index === 4 ? "text-[#18844d]" : "",
+                    ].join(" ")}
+                    key={retailer}
+                  >
+                    {retailer}
+                  </span>
+                );
+              })}
             </div>
           </FadeIn>
         </section>
@@ -342,7 +304,12 @@ export default function Home() {
         href="https://wa.me/2348031234567"
         aria-label="Chat on WhatsApp"
       >
-        WA
+        <Image
+          src={"/icons/whatsapp.svg"}
+          width={32}
+          height={32}
+          alt="whatsapp"
+        />
       </Link>
     </>
   );
