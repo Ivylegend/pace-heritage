@@ -42,8 +42,8 @@ export function Navbar() {
           aria-label="Pace Heritage home"
         >
           <Image
-            className="h-full w-full object-contain object-left"
-            src="/images/paceheritage-sign-source.png"
+            className="h-full w-full object-cover object-left"
+            src="/images/ph-logo.png"
             alt="Pace Heritage"
             width={370}
             height={74}

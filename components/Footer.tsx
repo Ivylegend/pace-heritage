@@ -15,8 +15,8 @@ export function Footer() {
       <div className="mx-auto grid w-[min(1180px,calc(100%-40px))] gap-9 md:grid-cols-2 lg:grid-cols-[1.35fr_0.75fr_0.8fr_1fr_1.35fr]">
         <div>
           <Image
-            className="mb-4 h-12 w-[210px] object-contain object-left"
-            src="/images/paceheritage-sign-source.png"
+            className="mb-4 h-12 w-[210px] object-cover object-left"
+            src="/images/ph-logo.png"
             alt="Pace Heritage"
             width={370}
             height={74}
