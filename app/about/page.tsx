@@ -11,7 +11,7 @@ export default function AboutPage() {
       year: "1995",
       title: "The Beginning",
       description:
-        "It all started with a single neighborhood store and a bold dream: to bring premium dairy treats to our community. Our first shop became a local landmark, known for the creamiest ice cream and a warm, welcoming atmosphere that felt like home.",
+        "Pace Heritage began in Lagos as a neighborhood convinience store selling ice cream for a major manufacturer.",
       image:
         "https://raw.createusercontent.com/3c54d3a3-e307-4970-9d2f-e1f85f6602f3/",
       reverse: false,
@@ -20,7 +20,7 @@ export default function AboutPage() {
       year: "Journey to Italy",
       title: "The Italian Inspiration",
       description:
-        "Our quest for excellence took us to the heart of Italy. We immersed ourselves in the age-old traditions of artisan gelato-making, learning from masters to bring back authentic techniques and the finest ingredient standards to Nigeria.",
+        "Our founders, Mr. & Mrs. Prosper C. Okigue, were inspired by the art and compassion Italian gelato makers put into every flavor, the ambience, and the rich aroma of italian espresso and gelato shops.",
       image:
         "https://raw.createusercontent.com/731515ba-4bee-4707-80ae-fd44f6d6402f/",
       reverse: true,
@@ -29,7 +29,7 @@ export default function AboutPage() {
       year: "Sophisticated Flavors",
       title: "The Olde English Era",
       description:
-        "As we grew, so did our ambition. We introduced a touch of Old English elegance to our brand, partnering with upscale jazz bars and premium restaurants to provide sophisticated dessert experiences that redefined the local culinary landscape.",
+        "The inspiration led to The Olde English Jazz Bar/Restaurant, where every meal was paired with erotic ice cream desserts. It became a local Mecca for jazz lovers and a home for emerging artists.",
       image:
         "https://raw.createusercontent.com/12eae180-b979-4b14-b205-2196ca0a4ab1/",
       reverse: false,
@@ -38,7 +38,7 @@ export default function AboutPage() {
       year: "Innovation",
       title: "A Cone of Our Own",
       description:
-        "We didn't just want to follow trends; we wanted to set them. By developing our own proprietary recipes and signature cones, we established a unique identity that stood for innovation and uncompromising flavor quality.",
+        "We introduced ice cream cones - a complete departure from plastic cups. Demand for our takeaway ice cream and cones grew rapidly.",
       image:
         "https://images.unsplash.com/photo-1501443762994-82bd5dace89a?auto=format&fit=crop&q=80&w=1200",
       reverse: true,
@@ -47,7 +47,7 @@ export default function AboutPage() {
       year: "1995 - 2005",
       title: "Building for Growth",
       description:
-        "A decade of relentless focus saw us scaling from a local favorite to a regional powerhouse. We invested heavily in our people and processes, laying the foundation for a sustainable manufacturing ecosystem.",
+        "We moved to a 240 square meter factory at Lagos State Small Scale Industries Estate, Matori, Lagos, equipped with automatic machines and premium ingredients from leading italian firms.",
       image:
         "https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?auto=format&fit=crop&q=80&w=1200",
       reverse: false,
@@ -56,7 +56,7 @@ export default function AboutPage() {
       year: "2005",
       title: "A New Chapter",
       description:
-        "In 2005, we inaugurated our state-of-the-art production facility. This milestone allowed us to implement international safety standards and scale our vision of providing world-class dairy products across the nation.",
+        "Pace expanded to a 1.5 hectare factory at Agbara Industrial Estate and secured NAFDAC certification in 2006 for all our products.",
       image:
         "https://images.unsplash.com/photo-1558444479-c8a39e9227c8?auto=format&fit=crop&q=80&w=1200",
       reverse: true,
@@ -65,7 +65,7 @@ export default function AboutPage() {
       year: "Future",
       title: "Today & Beyond",
       description:
-        "Today, Pace Heritage continues to lead with passion. Our commitment to the next generation remains steadfast as we innovate with new flavors and sustainable practices, ensuring that the magic of a Pace scoop remains timeless.",
+        "The Pace Heritage inspiration became a dream, the dream became reality, and the drive to achieve excellence remains unstoppab;e. We continue to innovate and deliver premium ice cream products accross Nigeria and beyond.",
       image:
         "https://images.unsplash.com/photo-1496674202477-969403a58401?auto=format&fit=crop&q=80&w=1200",
       reverse: false,
