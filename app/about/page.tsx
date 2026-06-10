@@ -77,7 +77,7 @@ export default function AboutPage() {
       <Navbar />
 
       {/* Hero Section */}
-      <section className="relative pt-32 pb-20 bg-[#0A1A2F] text-white overflow-hidden">
+      <section className="relative min-h-[760px] lg:h-screen max-lg:min-h-0 pt-[150px] pb-8 max-lg:pt-32 max-sm:pt-28 bg-[#0A1A2F] text-white overflow-hidden">
         <div className="absolute top-0 right-0 w-1/3 h-full opacity-20 pointer-events-none">
           <div className="w-full h-full bg-linear-to-l from-[#EAB308] to-transparent" />
         </div>
@@ -88,15 +88,13 @@ export default function AboutPage() {
               <div className="inline-block px-4 py-1.5 rounded-full bg-white/10 border border-white/20 text-[#EAB308] text-sm font-bold uppercase tracking-wider">
                 Our Story
               </div>
-              <h1 className="text-5xl md:text-7xl font-bold font-crimson-text leading-tight">
+              <h1 className="font-serif text-[clamp(3.1rem,5.1vw,4.25rem)] leading-[0.96] max-sm:text-[clamp(2.75rem,11.7vw,4.1rem)] max-sm:leading-[1.02]">
                 A Heritage of Passion.
                 <br />
                 <span className="text-[#EAB308]">A Future of Excellence.</span>
               </h1>
               <p className="text-xl text-gray-300 leading-relaxed max-w-xl">
-                Pace Heritage is more than just a brand. It is a legacy of
-                craftsmanship, rooted in the belief that every scoop should be a
-                celebration of quality, tradition, and pure joy.
+                Our journey began with a simple love for ice cream and a dream to create exceptional experiences to every customer.
               </p>
             </div>
             <div className="relative">
@@ -126,7 +124,7 @@ export default function AboutPage() {
                   <div className="text-[#EAB308] font-bold text-lg tracking-widest uppercase">
                     {item.year}
                   </div>
-                  <h2 className="text-4xl font-bold font-crimson-text text-[#0A1A2F]">
+                  <h2 className="text-4xl font-bold font-serif text-[#0A1A2F]">
                     {item.title}
                   </h2>
                   <div className="w-20 h-1 bg-[#EAB308]" />
@@ -156,7 +154,7 @@ export default function AboutPage() {
       <section className="py-24 bg-[#0A1A2F] text-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-20 space-y-4">
-            <h2 className="text-4xl md:text-5xl font-bold font-crimson-text">
+            <h2 className="text-4xl md:text-5xl font-bold font-serif">
               Quality Today. Excellence Always.
             </h2>
             <p className="text-gray-400 max-w-2xl mx-auto">

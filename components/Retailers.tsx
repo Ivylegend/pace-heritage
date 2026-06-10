@@ -56,32 +56,21 @@ export function Retailers() {
         <p className="mb-3.5 text-xs font-black uppercase tracking-[0.08em] text-[#f3b23f]">
           Trusted by leading retailers
         </p>
-        {/* Desktop Grid */}
-        <div
-          className="hidden md:grid md:grid-cols-5 items-center gap-5"
-          aria-label="Retailer partners"
-        >
-          {retailers.map((retailer, index) => (
-            <div key={retailer} className="flex justify-center">
-              {renderRetailer(retailer, index)}
-            </div>
-          ))}
-        </div>
 
-        {/* Mobile Endless Marquee */}
+        {/* Endless Marquee — all screen sizes */}
         <div
-          className="relative w-full overflow-hidden md:hidden py-2.5"
+          className="relative w-full overflow-hidden py-2.5"
           aria-label="Retailer partners"
         >
-          <div className="pointer-events-none absolute inset-y-0 left-0 w-8 bg-linear-to-r from-white to-transparent z-10" />
-          <div className="pointer-events-none absolute inset-y-0 right-0 w-8 bg-linear-to-l from-white to-transparent z-10" />
+          <div className="pointer-events-none absolute inset-y-0 left-0 w-12 bg-linear-to-r from-white to-transparent z-10" />
+          <div className="pointer-events-none absolute inset-y-0 right-0 w-12 bg-linear-to-l from-white to-transparent z-10" />
 
           <motion.div
             className="flex w-max items-center"
             animate={{ x: ["0%", "-50%"] }}
             transition={{
               ease: "linear",
-              duration: 15,
+              duration: 18,
               repeat: Infinity,
             }}
           >
@@ -89,7 +78,7 @@ export function Retailers() {
             {retailers.map((retailer, index) => (
               <div
                 key={`${retailer}-orig`}
-                className="mr-12 shrink-0 flex items-center justify-center min-w-[90px]"
+                className="mx-10 shrink-0 flex items-center justify-center min-w-[120px] md:mx-16 md:min-w-[160px]"
               >
                 {renderRetailer(retailer, index)}
               </div>
@@ -98,7 +87,7 @@ export function Retailers() {
             {retailers.map((retailer, index) => (
               <div
                 key={`${retailer}-dup`}
-                className="mr-12 shrink-0 flex items-center justify-center min-w-[90px]"
+                className="mx-10 shrink-0 flex items-center justify-center min-w-[120px] md:mx-16 md:min-w-[160px]"
               >
                 {renderRetailer(retailer, index)}
               </div>
