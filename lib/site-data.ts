@@ -2,8 +2,8 @@ export const navigation = [
   { label: "About", href: "/about" },
   { label: "Products", href: "/#products" },
   { label: "Manufacturing", href: "/#manufacturing" },
-  { label: "Private Label", href: "/#private-label" },
   { label: "Distribution", href: "/#distribution" },
+  { label: "Private Label", href: "/#private-label" },
   { label: "Contact", href: "/#contact" },
 ];
 
