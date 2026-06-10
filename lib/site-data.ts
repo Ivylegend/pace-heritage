@@ -1,10 +1,10 @@
 export const navigation = [
   { label: "About", href: "/about" },
-  { label: "Products", href: "#products" },
-  { label: "Manufacturing", href: "#manufacturing" },
-  { label: "Private Label", href: "#private-label" },
-  { label: "Distribution", href: "#distribution" },
-  { label: "Contact", href: "#contact" },
+  { label: "Products", href: "/#products" },
+  { label: "Manufacturing", href: "/#manufacturing" },
+  { label: "Private Label", href: "/#private-label" },
+  { label: "Distribution", href: "/#distribution" },
+  { label: "Contact", href: "/#contact" },
 ];
 
 export const stats = [
@@ -29,7 +29,7 @@ export const products = [
   {
     name: "Venezia Gelato",
     description: "Italian-inspired gelato and indulgent one-pint dessert formats.",
-    image: "/images/product-gelato.png",
+    image: "/images/product-catering.png",
   },
   {
     name: "Ice Cream Cones",
@@ -49,7 +49,7 @@ export const products = [
   {
     name: "Foodservice Supply",
     description: "Scalable formats for hotels, caterers, restaurants, and distributors.",
-    image: "/images/product-catering.png",
+    image: "/images/product-gelato.png",
   },
 ];
 

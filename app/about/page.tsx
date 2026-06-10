@@ -12,8 +12,7 @@ export default function AboutPage() {
       title: "The Beginning",
       description:
         "Pace Heritage began in Lagos as a neighborhood convinience store selling ice cream for a major manufacturer.",
-      image:
-        "https://raw.createusercontent.com/3c54d3a3-e307-4970-9d2f-e1f85f6602f3/",
+      image: "/images/beginning.png",
       reverse: false,
     },
     {
@@ -21,8 +20,7 @@ export default function AboutPage() {
       title: "The Italian Inspiration",
       description:
         "Our founders, Mr. & Mrs. Prosper C. Okigue, were inspired by the art and compassion Italian gelato makers put into every flavor, the ambience, and the rich aroma of italian espresso and gelato shops.",
-      image:
-        "https://raw.createusercontent.com/731515ba-4bee-4707-80ae-fd44f6d6402f/",
+      image: "/images/italy.png",
       reverse: true,
     },
     {
@@ -30,8 +28,7 @@ export default function AboutPage() {
       title: "The Olde English Era",
       description:
         "The inspiration led to The Olde English Jazz Bar/Restaurant, where every meal was paired with erotic ice cream desserts. It became a local Mecca for jazz lovers and a home for emerging artists.",
-      image:
-        "https://raw.createusercontent.com/12eae180-b979-4b14-b205-2196ca0a4ab1/",
+      image: "/images/old-english.png",
       reverse: false,
     },
     {
@@ -39,8 +36,7 @@ export default function AboutPage() {
       title: "A Cone of Our Own",
       description:
         "We introduced ice cream cones - a complete departure from plastic cups. Demand for our takeaway ice cream and cones grew rapidly.",
-      image:
-        "https://images.unsplash.com/photo-1501443762994-82bd5dace89a?auto=format&fit=crop&q=80&w=1200",
+      image: "/images/product-cone.png",
       reverse: true,
     },
     {
@@ -48,8 +44,7 @@ export default function AboutPage() {
       title: "Building for Growth",
       description:
         "We moved to a 240 square meter factory at Lagos State Small Scale Industries Estate, Matori, Lagos, equipped with automatic machines and premium ingredients from leading italian firms.",
-      image:
-        "https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?auto=format&fit=crop&q=80&w=1200",
+      image: "/images/hero-bg.png",
       reverse: false,
     },
     {
@@ -57,8 +52,7 @@ export default function AboutPage() {
       title: "A New Chapter",
       description:
         "Pace expanded to a 1.5 hectare factory at Agbara Industrial Estate and secured NAFDAC certification in 2006 for all our products.",
-      image:
-        "https://images.unsplash.com/photo-1558444479-c8a39e9227c8?auto=format&fit=crop&q=80&w=1200",
+      image: "/images/new-chapter.png",
       reverse: true,
     },
     {
@@ -66,8 +60,7 @@ export default function AboutPage() {
       title: "Today & Beyond",
       description:
         "The Pace Heritage inspiration became a dream, the dream became reality, and the drive to achieve excellence remains unstoppab;e. We continue to innovate and deliver premium ice cream products accross Nigeria and beyond.",
-      image:
-        "https://images.unsplash.com/photo-1496674202477-969403a58401?auto=format&fit=crop&q=80&w=1200",
+      image: "/images/lick.png",
       reverse: false,
     },
   ];
@@ -77,10 +70,17 @@ export default function AboutPage() {
       <Navbar />
 
       {/* Hero Section */}
-      <section className="relative min-h-[760px] lg:h-screen max-lg:min-h-0 pt-[150px] pb-8 max-lg:pt-32 max-sm:pt-28 bg-[#0A1A2F] text-white overflow-hidden">
-        <div className="absolute top-0 right-0 w-1/3 h-full opacity-20 pointer-events-none">
-          <div className="w-full h-full bg-linear-to-l from-[#EAB308] to-transparent" />
-        </div>
+      <section className="relative isolate min-h-[760px] lg:h-screen max-lg:min-h-0 pt-[150px] pb-8 max-lg:pt-32 max-sm:pt-28 overflow-hidden bg-[radial-gradient(circle_at_66%_35%,rgba(17,166,232,0.28),transparent_33%),linear-gradient(125deg,#05142b_0%,#071a34_48%,#020d20_100%)] text-white">
+        <Image
+          className="absolute inset-0 -z-30 h-full w-full object-cover object-right opacity-[0.42] blur-[1px]"
+          src="/images/hero-bg.png"
+          alt="Hero background"
+          fill
+          priority
+        />
+        <div className="absolute inset-0 -z-20 bg-[linear-gradient(90deg,rgba(4,16,34,0.96)_0%,rgba(4,16,34,0.72)_38%,rgba(4,16,34,0.23)_100%)]" />
+        <div className="absolute inset-0 -z-10 bg-[radial-gradient(circle_at_42%_18%,rgba(243,178,63,0.12),transparent_18%),radial-gradient(circle_at_74%_20%,rgba(255,255,255,0.16),transparent_8%),radial-gradient(circle_at_88%_62%,rgba(17,166,232,0.18),transparent_22%)] opacity-90" />
+        <div className="absolute inset-0 -z-20 bg-[linear-gradient(90deg,rgba(255,255,255,0.04)_1px,transparent_1px),linear-gradient(rgba(255,255,255,0.035)_1px,transparent_1px)] bg-size-[82px_82px]" />
 
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
@@ -93,18 +93,19 @@ export default function AboutPage() {
                 <br />
                 <span className="text-[#EAB308]">A Future of Excellence.</span>
               </h1>
-              <p className="text-xl text-gray-300 leading-relaxed max-w-xl">
-                Our journey began with a simple love for ice cream and a dream to create exceptional experiences to every customer.
+              <p className="text-[1.05rem] text-gray-300 leading-relaxed max-w-xl">
+                Our journey began with a simple love for ice cream and a dream
+                to create exceptional experiences to every customer.
               </p>
             </div>
             <div className="relative">
-              <div className="absolute inset-0 bg-[#EAB308] rounded-3xl rotate-3 scale-105 opacity-20 custom-pulse" />
+              {/* <div className="absolute inset-0 bg-[#EAB308] rounded-3xl rotate-3 scale-105 opacity-20 custom-pulse" /> */}
               <Image
-                src="https://raw.createusercontent.com/9da64afb-14f4-4997-a4b3-30d40561424a/"
+                src="/images/ab.png"
                 alt="Premium Ice Cream"
                 width={600}
                 height={500}
-                className="relative rounded-3xl shadow-2xl w-full h-[500px] object-cover border-4 border-white/10"
+                className="relative w-full h-[500px] object-cover scale-110 lg:scale-120"
               />
             </div>
           </div>
@@ -158,8 +159,9 @@ export default function AboutPage() {
               Quality Today. Excellence Always.
             </h2>
             <p className="text-gray-400 max-w-2xl mx-auto">
-              Our guiding principles ensure that every interaction with our
-              brand is as premium as our products.
+              We remain committed to crafting premium ice cream products with
+              integrity, innovation and a passion for bringing joy to every
+              customer.
             </p>
           </div>
 
