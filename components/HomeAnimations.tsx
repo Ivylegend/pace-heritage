@@ -96,7 +96,26 @@ export function HeroAnimations({ container }: { container: string }) {
         initial={{ opacity: 0, x: 40, scale: 0.97 }}
         animate={{ opacity: 1, x: 0, scale: 1 }}
         transition={{ duration: 1, delay: 0.18, ease }}
+        className="relative"
       >
+        {/* Anniversary badge */}
+        <motion.div
+          initial={{ opacity: 0, y: 20, scale: 0.9 }}
+          animate={{ opacity: 1, y: 0, scale: 1 }}
+          transition={{ duration: 0.7, delay: 0.6, ease }}
+          className="absolute top-40 sm:top-48 right-16 lg:-right-16 z-20 w-[clamp(90px,16vw,150px)]"
+        >
+          <Image
+            src="/images/anniversary-badge.png"
+            alt="Pace Heritage Anniversary Badge"
+            width={320}
+            height={320}
+            style={{ width: "100%", height: "auto" }}
+            className="drop-shadow-[0_8px_24px_rgba(243,178,63,0.35)]"
+            priority
+          />
+        </motion.div>
+
         <Image
           className="relative z-10 mx-auto w-[min(760px,100%)] drop-shadow-[0_34px_44px_rgba(0,0,0,0.28)] translate-x-10 lg:translate-x-20 lg:translate-y-10 lg:drop-shadow-[0_48px_58px_rgba(0,0,0,0.38)] scale-160"
           src="/images/hero-2.png"

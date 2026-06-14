@@ -2,7 +2,7 @@
 
 import { useRef } from "react";
 import { Award, Zap, Users, ShieldCheck } from "lucide-react";
-import { motion, useScroll, useTransform } from "framer-motion";
+import { motion, useScroll, useTransform, useSpring } from "framer-motion";
 import { Navbar } from "@/components/Navbar";
 import { Footer } from "@/components/Footer";
 import Image from "next/image";
@@ -60,6 +60,9 @@ const timelineData = [
   },
 ];
 
+/* ─── Spring config for buttery scroll-driven motion ──────────── */
+const springConfig = { stiffness: 280, damping: 38, mass: 0.7 };
+
 /* ─── Sticky timeline card ─────────────────────────────────────── */
 function TimelineCard({
   item,
@@ -72,24 +75,61 @@ function TimelineCard({
   total: number;
   scrollYProgress: ReturnType<typeof useScroll>["scrollYProgress"];
 }) {
-  const start = index / total;
   const slotSize = 1 / total;
-  // Slide up during the first 20% of this card's slot, dwell the rest.
-  // Card 0 needs no entrance — it's visible from scroll 0.
-  const entranceStart = index === 0 ? 0 : start;
-  const entranceEnd   = index === 0 ? 0.001 : start + slotSize * 0.2;
+  const start = index * slotSize;
 
-  const y = useTransform(
+  // Use 50% of the slot for the slide-up entrance (was 20%).
+  // Card 0 is already in place — no entrance needed.
+  const entranceStart = index === 0 ? 0 : start;
+  const entranceEnd   = index === 0 ? 0.001 : start + slotSize * 0.5;
+
+  // Raw scroll-linked transforms
+  const rawY = useTransform(
     scrollYProgress,
     [entranceStart, entranceEnd],
-    index === 0 ? ["0px", "0px"] : ["100%", "0%"]
+    index === 0 ? ["0%", "0%"] : ["100%", "0%"]
   );
+
+  const rawOpacity = useTransform(
+    scrollYProgress,
+    index === 0
+      ? [0, 1]
+      : [entranceStart, entranceStart + slotSize * 0.25],
+    [1, 1] // card 0 stays fully visible
+  );
+  // For non-zero cards, override with a 0→1 fade
+  const rawOpacityNonZero = useTransform(
+    scrollYProgress,
+    [entranceStart, entranceStart + slotSize * 0.3],
+    [0, 1]
+  );
+
+  // Spring-smooth everything for buttery feel
+  const y = useSpring(rawY, springConfig);
+  const opacity = useSpring(
+    index === 0 ? rawOpacity : rawOpacityNonZero,
+    springConfig
+  );
+
+  // Subtle content entrance: text slides from one side, image from the other
+  const rawTextX = useTransform(
+    scrollYProgress,
+    [entranceStart, entranceEnd],
+    index === 0 ? ["0px", "0px"] : ["-24px", "0px"]
+  );
+  const rawImageX = useTransform(
+    scrollYProgress,
+    [entranceStart, entranceEnd],
+    index === 0 ? ["0px", "0px"] : ["24px", "0px"]
+  );
+  const textX = useSpring(rawTextX, springConfig);
+  const imageX = useSpring(rawImageX, springConfig);
 
   const isEven = index % 2 === 0;
 
   return (
     <motion.div
-      style={{ y, zIndex: index + 1 }}
+      style={{ y, opacity, zIndex: index + 1 }}
       className="absolute inset-0 flex items-center bg-white overflow-hidden"
     >
       <div className="w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -99,7 +139,7 @@ function TimelineCard({
           }`}
         >
           {/* Text */}
-          <div className="flex-1 space-y-6">
+          <motion.div style={{ x: textX }} className="flex-1 space-y-6">
             <div className="text-[#f3b23f] font-bold text-sm tracking-[0.12em] uppercase">
               {item.year}
             </div>
@@ -123,10 +163,10 @@ function TimelineCard({
                 />
               ))}
             </div>
-          </div>
+          </motion.div>
 
           {/* Image */}
-          <div className="flex-1 w-full">
+          <motion.div style={{ x: imageX }} className="flex-1 w-full">
             <div className="relative h-[320px] md:h-[400px] overflow-hidden rounded-2xl shadow-[0_24px_60px_rgba(7,24,47,0.16)]">
               <Image
                 src={item.image}
@@ -137,7 +177,7 @@ function TimelineCard({
               />
               <div className="absolute inset-0 bg-linear-to-t from-black/20 to-transparent" />
             </div>
-          </div>
+          </motion.div>
         </div>
       </div>
     </motion.div>
@@ -234,7 +274,7 @@ export default function AboutPage() {
       */}
       <div
         ref={timelineRef}
-        style={{ height: `${timelineData.length * 100}vh` }}
+        style={{ height: `${timelineData.length * 65}vh` }}
         className="relative bg-white"
       >
         {/* Section label – visible before sticky kicks in */}
