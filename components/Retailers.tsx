@@ -17,7 +17,7 @@ export function Retailers() {
           alt="SPAR Logo"
           width={120}
           height={32}
-          style={{ height: "auto" }}
+          style={{ width: "auto", height: "auto" }}
           className="mx-auto h-8 w-auto object-contain transition duration-300 hover:scale-105"
         />
       );
@@ -29,7 +29,7 @@ export function Retailers() {
           alt="Shoprite Logo"
           width={120}
           height={32}
-          style={{ height: "auto" }}
+          style={{ width: "auto", height: "auto" }}
           className="mx-auto h-8 w-auto object-contain transition duration-300 hover:scale-105"
         />
       );

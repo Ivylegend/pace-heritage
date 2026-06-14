@@ -103,6 +103,7 @@ export function HeroAnimations({ container }: { container: string }) {
           alt="Pace Heritage ice cream, cones, and dry mix products"
           width={1391}
           height={1131}
+          style={{ height: "auto" }}
           priority
         />
       </motion.div>
@@ -255,6 +256,7 @@ export function DistributionSection({ container }: { container: string }) {
             alt="Distribution map highlighting Nigeria and expansion across Africa"
             width={1724}
             height={912}
+            style={{ height: "auto" }}
             sizes="(max-width: 900px) 100vw, 58vw"
           />
         </motion.div>

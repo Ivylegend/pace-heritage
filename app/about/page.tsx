@@ -127,13 +127,13 @@ function TimelineCard({
 
           {/* Image */}
           <div className="flex-1 w-full">
-            <div className="relative overflow-hidden rounded-2xl shadow-[0_24px_60px_rgba(7,24,47,0.16)]">
+            <div className="relative h-[320px] md:h-[400px] overflow-hidden rounded-2xl shadow-[0_24px_60px_rgba(7,24,47,0.16)]">
               <Image
                 src={item.image}
                 alt={item.title}
-                width={600}
-                height={420}
-                className="w-full h-[320px] md:h-[400px] object-cover"
+                fill
+                sizes="(max-width: 1024px) 100vw, 50vw"
+                className="object-cover"
               />
               <div className="absolute inset-0 bg-linear-to-t from-black/20 to-transparent" />
             </div>
@@ -210,14 +210,15 @@ export default function AboutPage() {
               initial={{ opacity: 0, x: 40 }}
               animate={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.9, delay: 0.18, ease: [0.19, 1, 0.22, 1] }}
-              className="relative"
+              className="relative w-full h-[500px] overflow-hidden"
             >
               <Image
                 src="/images/ab.png"
                 alt="Premium Ice Cream"
-                width={600}
-                height={500}
-                className="relative w-full h-[500px] object-cover scale-110 lg:scale-120"
+                fill
+                sizes="(max-width: 1024px) 100vw, 50vw"
+                priority
+                className="object-cover scale-110 lg:scale-120"
               />
             </motion.div>
           </div>

@@ -86,6 +86,7 @@ export default function ProductCardsSection() {
                       height={500}
                       src={product.image}
                       alt={product.name}
+                      style={{ width: "auto", height: "auto" }}
                       className={`w-auto object-cover drop-shadow-xl transition-transform ${
                         section.darkHeader ? "max-h-[180px] scale-125 sm:scale-[2]" : "max-h-[190px]"
                       }`}
