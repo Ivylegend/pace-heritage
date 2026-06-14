@@ -74,11 +74,35 @@ export function HeroAnimations({ container }: { container: string }) {
           retailers across Nigeria.
         </motion.p>
 
+        {/* Heritage badge */}
+        <motion.div
+          initial={{ opacity: 0, y: 18 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.72, delay: 0.26, ease }}
+          className="mt-7 flex items-center gap-4 border-t border-[#f3b23f]/40 pt-5"
+        >
+          <Image
+            src="/images/anniversary-badge.png"
+            alt="30 Years Anniversary Badge"
+            width={80}
+            height={80}
+            className="h-12 w-12 shrink-0 object-contain"
+          />
+          <div>
+            <p className="text-[0.95rem] font-medium leading-snug text-white/90">
+              Crafting Ice Cream Excellence Since 1995
+            </p>
+            <p className="text-[0.95rem] font-medium italic leading-snug text-[#f3b23f] font-serif">
+              30 Years of Manufacturing Heritage
+            </p>
+          </div>
+        </motion.div>
+
         <motion.div
           initial={{ opacity: 0, y: 18 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.72, delay: 0.32, ease }}
-          className="mt-8 flex flex-wrap gap-4 max-sm:flex-col"
+          className="mt-6 flex flex-wrap gap-4 max-sm:flex-col"
         >
           <Link className={primaryButton} href="/#contact">
             Request Wholesale Quote
