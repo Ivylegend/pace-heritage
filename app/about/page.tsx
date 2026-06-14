@@ -318,45 +318,56 @@ export default function AboutPage() {
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-            {[
+            {([
               {
-                icon: <Award className="text-[#f3b23f]" size={36} />,
+                icon: "Award" as const,
                 title: "Premium Quality",
                 desc: "Using only the finest ingredients sourced globally.",
+                anim: { animate: { rotate: [0, -10, 10, -5, 0], y: [0, -3, 0] }, transition: { duration: 2.2, repeat: Infinity, ease: "easeInOut" as const } },
               },
               {
-                icon: <Zap className="text-[#f3b23f]" size={36} />,
+                icon: "Zap" as const,
                 title: "Innovation Driven",
                 desc: "Constant evolution of flavors and manufacturing.",
+                anim: { animate: { scale: [1, 1.2, 1], opacity: [1, 0.7, 1] }, transition: { duration: 1.4, repeat: Infinity, ease: "easeInOut" as const } },
               },
               {
-                icon: <Users className="text-[#f3b23f]" size={36} />,
+                icon: "Users" as const,
                 title: "Customer Focused",
                 desc: "Every scoop is designed for your ultimate satisfaction.",
+                anim: { animate: { y: [0, -4, 0], x: [0, 2, -2, 0] }, transition: { duration: 2.4, repeat: Infinity, ease: "easeInOut" as const } },
               },
               {
-                icon: <ShieldCheck className="text-[#f3b23f]" size={36} />,
+                icon: "ShieldCheck" as const,
                 title: "Proudly Nigerian",
                 desc: "Building local excellence with international standards.",
+                anim: { animate: { scale: [1, 1.1, 1], y: [0, -3, 0] }, transition: { duration: 2, repeat: Infinity, ease: "easeInOut" as const } },
               },
-            ].map((promise, i) => (
-              <motion.div
-                key={i}
-                initial={{ opacity: 0, y: 24 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true, margin: "-60px" }}
-                transition={{ duration: 0.6, delay: i * 0.08, ease: [0.19, 1, 0.22, 1] }}
-                className="p-8 rounded-2xl bg-white/5 border border-white/10 hover:border-[#f3b23f]/50 transition-all group"
-              >
-                <div className="mb-5 transform group-hover:scale-110 transition-transform">
-                  {promise.icon}
-                </div>
-                <h3 className="text-lg font-bold mb-3">{promise.title}</h3>
-                <p className="text-white/55 text-sm leading-relaxed">
-                  {promise.desc}
-                </p>
-              </motion.div>
-            ))}
+            ]).map((promise, i) => {
+              const IconComp = { Award, Zap, Users, ShieldCheck }[promise.icon];
+              return (
+                <motion.div
+                  key={i}
+                  initial={{ opacity: 0, y: 24 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true, margin: "-60px" }}
+                  transition={{ duration: 0.6, delay: i * 0.08, ease: [0.19, 1, 0.22, 1] }}
+                  className="p-8 rounded-2xl bg-white/5 border border-white/10 hover:border-[#f3b23f]/50 transition-all group"
+                >
+                  <motion.div
+                    animate={promise.anim.animate}
+                    transition={promise.anim.transition}
+                    className="mb-5"
+                  >
+                    <IconComp className="text-[#f3b23f]" size={44} />
+                  </motion.div>
+                  <h3 className="text-lg font-bold mb-3">{promise.title}</h3>
+                  <p className="text-white/55 text-sm leading-relaxed">
+                    {promise.desc}
+                  </p>
+                </motion.div>
+              );
+            })}
           </div>
         </div>
       </section>

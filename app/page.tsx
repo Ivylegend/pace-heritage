@@ -60,7 +60,7 @@ export default function Home() {
             <SlideIn from="bottom">
               <SectionHeader
                 title="Our Product Range"
-                description="Premium products for retail, foodservice, manufacturing, and private-label growth."
+                description="Premium products for retail and manufacturing."
               />
             </SlideIn>
             {/* <ProductGrid products={products} /> */}

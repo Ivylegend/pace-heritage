@@ -14,16 +14,16 @@ import {
   Handshake,
   type LucideIcon,
 } from "lucide-react";
-import { motion } from "framer-motion";
+import { motion, type TargetAndTransition, type Transition } from "framer-motion";
 import { SlideIn } from "@/components/Motion";
 import { SectionHeader } from "@/components/SectionHeader";
 
 const ease = [0.19, 1, 0.22, 1] as const;
 
 const primaryButton =
-  "inline-flex min-h-12 items-center justify-center gap-3 rounded-[10px] bg-gradient-to-br from-[#c8791c] to-[#f3b23f] px-6 text-sm font-black text-white shadow-[0_14px_34px_rgba(217,149,36,0.32)] transition hover:-translate-y-0.5 hover:shadow-[0_18px_44px_rgba(217,149,36,0.36)] max-sm:w-full";
+  "inline-flex min-h-12 items-center justify-center gap-3 rounded-[10px] bg-gradient-to-br from-[#c8791c] to-[#f3b23f] px-6 text-sm font-semibold text-white shadow-[0_14px_34px_rgba(217,149,36,0.32)] transition hover:-translate-y-0.5 hover:shadow-[0_18px_44px_rgba(217,149,36,0.36)] max-sm:w-full";
 const ghostButton =
-  "inline-flex min-h-12 items-center justify-center gap-3 rounded-[10px] border border-white/35 bg-white/[0.06] px-6 text-sm font-black text-white transition hover:-translate-y-0.5 hover:border-white/65 hover:shadow-[0_16px_40px_rgba(0,0,0,0.18)] max-sm:w-full";
+  "inline-flex min-h-12 items-center justify-center gap-3 rounded-[10px] border border-white/35 bg-white/[0.06] px-6 text-sm font-semibold text-white transition hover:-translate-y-0.5 hover:border-white/65 hover:shadow-[0_16px_40px_rgba(0,0,0,0.18)] max-sm:w-full";
 
 /* ─── Icon map ───────────────────────────────────────────────── */
 const iconMap: Record<string, LucideIcon> = {
@@ -70,8 +70,8 @@ export function HeroAnimations({ container }: { container: string }) {
           transition={{ duration: 0.72, delay: 0.2, ease }}
           className="mt-5 max-w-[520px] text-[1.05rem] leading-8 text-white/85"
         >
-          Supplying premium ice cream products to retailers nationwide and
-          expanding distribution across Africa.
+          Premium ice cream dry mix, cones, and dessert solutions trusted by
+          retailers across Nigeria.
         </motion.p>
 
         <motion.div
@@ -130,6 +130,42 @@ export function HeroAnimations({ container }: { container: string }) {
   );
 }
 
+/* ─── Per-icon looping animations (gif-like) ─────────────────── */
+const iconAnimations: Record<string, { animate: TargetAndTransition; transition: Transition }> = {
+  Truck: {
+    animate: { x: [0, 3, -3, 2, 0] },
+    transition: { duration: 2, repeat: Infinity, ease: "easeInOut" },
+  },
+  Crown: {
+    animate: { y: [0, -4, 0], rotate: [0, -6, 6, 0] },
+    transition: { duration: 2.4, repeat: Infinity, ease: "easeInOut" },
+  },
+  Clock: {
+    animate: { rotate: [0, 15, -15, 10, 0] },
+    transition: { duration: 2.2, repeat: Infinity, ease: "easeInOut" },
+  },
+  Handshake: {
+    animate: { rotate: [0, 12, -12, 8, -8, 0], y: [0, -2, 0] },
+    transition: { duration: 1.6, repeat: Infinity, ease: "easeInOut" },
+  },
+  Cpu: {
+    animate: { scale: [1, 1.12, 1], rotate: [0, 0, 90, 90, 0] },
+    transition: { duration: 3, repeat: Infinity, ease: "easeInOut" },
+  },
+  ShieldCheck: {
+    animate: { scale: [1, 1.1, 1], y: [0, -3, 0] },
+    transition: { duration: 2, repeat: Infinity, ease: "easeInOut" },
+  },
+  Award: {
+    animate: { rotate: [0, -10, 10, -5, 0], y: [0, -3, 0] },
+    transition: { duration: 2.2, repeat: Infinity, ease: "easeInOut" },
+  },
+  TrendingUp: {
+    animate: { x: [0, 3, 0], y: [0, -4, 0] },
+    transition: { duration: 1.8, repeat: Infinity, ease: "easeInOut" },
+  },
+};
+
 /* ─── Stats strip (below hero) ───────────────────────────────── */
 export function StatsStrip({ container }: { container: string }) {
   const features = [
@@ -148,17 +184,20 @@ export function StatsStrip({ container }: { container: string }) {
     >
       {features.map(({ label, icon }) => {
         const Icon = iconMap[icon];
+        const anim = iconAnimations[icon];
         return (
           <div
             key={label}
-            className="flex min-h-[92px] items-center gap-3.5 border-white/10 bg-[#021025]/40 px-6 py-4 max-sm:min-h-[74px] lg:border-r last:border-r-0"
+            className="flex min-h-[92px] items-center gap-4 border-white/10 bg-[#021025]/40 px-6 py-4 max-sm:min-h-[74px] lg:border-r last:border-r-0"
           >
-            <div
-              className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full border-2 border-[#f3b23f] text-[#f3b23f]"
+            <motion.div
+              animate={anim.animate}
+              transition={anim.transition}
+              className="flex h-14 w-14 shrink-0 items-center justify-center rounded-full border-2 border-[#f3b23f] text-[#f3b23f]"
               aria-hidden="true"
             >
-              <Icon className="h-5 w-5" />
-            </div>
+              <Icon className="h-7 w-7" />
+            </motion.div>
             <strong className="text-sm leading-snug">{label}</strong>
           </div>
         );
@@ -217,6 +256,7 @@ export function MfgFeatures({
     <div className="mb-8 grid gap-4.5 sm:grid-cols-2 sm:gap-5 xl:grid-cols-4">
       {features.map(({ label, icon }, i) => {
         const Icon = iconMap[icon];
+        const anim = iconAnimations[icon];
         return (
           <motion.div
             key={label}
@@ -224,14 +264,16 @@ export function MfgFeatures({
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, margin: "-60px" }}
             transition={{ duration: 0.55, delay: i * 0.09, ease }}
-            className="flex items-center gap-3.5 sm:flex-col sm:items-start sm:gap-3"
+            className="flex items-center gap-4 sm:flex-col sm:items-start sm:gap-3"
           >
-            <div
-              className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full border-2 border-[#f3b23f] text-[#f3b23f]"
+            <motion.div
+              animate={anim?.animate}
+              transition={anim?.transition}
+              className="flex h-14 w-14 shrink-0 items-center justify-center rounded-full border-2 border-[#f3b23f] text-[#f3b23f]"
               aria-hidden="true"
             >
-              <Icon className="h-5 w-5" />
-            </div>
+              <Icon className="h-7 w-7" />
+            </motion.div>
             <p className="m-0 text-sm leading-snug text-white/85">{label}</p>
           </motion.div>
         );
