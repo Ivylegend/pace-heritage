@@ -21,9 +21,9 @@ import { SectionHeader } from "@/components/SectionHeader";
 const ease = [0.19, 1, 0.22, 1] as const;
 
 const primaryButton =
-  "inline-flex min-h-12 items-center justify-center gap-3 rounded-[10px] bg-gradient-to-br from-[#c8791c] to-[#f3b23f] px-6 text-sm font-semibold text-white shadow-[0_14px_34px_rgba(217,149,36,0.32)] transition hover:-translate-y-0.5 hover:shadow-[0_18px_44px_rgba(217,149,36,0.36)] max-sm:w-full";
+  "inline-flex min-h-12 items-center justify-center gap-3 rounded-[10px] bg-gradient-to-br from-[#c8791c] to-[#f3b23f] px-6 text-sm font-semibold text-white shadow-[0_14px_34px_rgba(217,149,36,0.32)] transition hover:-translate-y-0.5 hover:from-[#d98a2a] hover:to-[#f5c14f] hover:shadow-[0_18px_44px_rgba(217,149,36,0.36)] max-sm:w-full";
 const ghostButton =
-  "inline-flex min-h-12 items-center justify-center gap-3 rounded-[10px] border border-white/35 bg-white/[0.06] px-6 text-sm font-semibold text-white transition hover:-translate-y-0.5 hover:border-white/65 hover:shadow-[0_16px_40px_rgba(0,0,0,0.18)] max-sm:w-full";
+  "inline-flex min-h-12 items-center justify-center gap-3 rounded-[10px] border border-white/35 bg-white/[0.06] px-6 text-sm font-semibold text-white transition hover:-translate-y-0.5 hover:bg-white/15 hover:border-white/65 hover:shadow-[0_16px_40px_rgba(0,0,0,0.18)] max-sm:w-full";
 
 /* ─── Icon map ───────────────────────────────────────────────── */
 const iconMap: Record<string, LucideIcon> = {

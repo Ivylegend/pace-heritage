@@ -111,7 +111,7 @@ export default function Home() {
       <Footer />
 
       <Link
-        className="fixed right-6 bottom-6 z-40 grid h-14 w-14 place-items-center rounded-full bg-[#24d366] text-sm font-black text-white shadow-[0_16px_36px_rgba(36,211,102,0.32)] max-sm:right-4 max-sm:bottom-4 max-sm:h-13 max-sm:w-13"
+        className="fixed right-6 bottom-6 z-40 grid h-14 w-14 place-items-center rounded-full bg-[#24d366] text-sm font-black text-white shadow-[0_16px_36px_rgba(36,211,102,0.32)] transition hover:bg-[#2be06f] hover:scale-110 hover:shadow-[0_20px_44px_rgba(36,211,102,0.4)] max-sm:right-4 max-sm:bottom-4 max-sm:h-13 max-sm:w-13"
         href="https://wa.me/2348031234567"
         aria-label="Chat on WhatsApp"
       >
