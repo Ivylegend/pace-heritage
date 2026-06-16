@@ -81,46 +81,44 @@ function TimelineCard({
   // Use 50% of the slot for the slide-up entrance (was 20%).
   // Card 0 is already in place — no entrance needed.
   const entranceStart = index === 0 ? 0 : start;
-  const entranceEnd   = index === 0 ? 0.001 : start + slotSize * 0.5;
+  const entranceEnd = index === 0 ? 0.001 : start + slotSize * 0.5;
 
   // Raw scroll-linked transforms
   const rawY = useTransform(
     scrollYProgress,
     [entranceStart, entranceEnd],
-    index === 0 ? ["0%", "0%"] : ["100%", "0%"]
+    index === 0 ? ["0%", "0%"] : ["100%", "0%"],
   );
 
   const rawOpacity = useTransform(
     scrollYProgress,
-    index === 0
-      ? [0, 1]
-      : [entranceStart, entranceStart + slotSize * 0.25],
-    [1, 1] // card 0 stays fully visible
+    index === 0 ? [0, 1] : [entranceStart, entranceStart + slotSize * 0.25],
+    [1, 1], // card 0 stays fully visible
   );
   // For non-zero cards, override with a 0→1 fade
   const rawOpacityNonZero = useTransform(
     scrollYProgress,
     [entranceStart, entranceStart + slotSize * 0.3],
-    [0, 1]
+    [0, 1],
   );
 
   // Spring-smooth everything for buttery feel
   const y = useSpring(rawY, springConfig);
   const opacity = useSpring(
     index === 0 ? rawOpacity : rawOpacityNonZero,
-    springConfig
+    springConfig,
   );
 
   // Subtle content entrance: text slides from one side, image from the other
   const rawTextX = useTransform(
     scrollYProgress,
     [entranceStart, entranceEnd],
-    index === 0 ? ["0px", "0px"] : ["-24px", "0px"]
+    index === 0 ? ["0px", "0px"] : ["-24px", "0px"],
   );
   const rawImageX = useTransform(
     scrollYProgress,
     [entranceStart, entranceEnd],
-    index === 0 ? ["0px", "0px"] : ["24px", "0px"]
+    index === 0 ? ["0px", "0px"] : ["24px", "0px"],
   );
   const textX = useSpring(rawTextX, springConfig);
   const imageX = useSpring(rawImageX, springConfig);
@@ -156,9 +154,7 @@ function TimelineCard({
                 <span
                   key={i}
                   className={`block h-1.5 rounded-full transition-all duration-300 ${
-                    i === index
-                      ? "w-6 bg-[#f3b23f]"
-                      : "w-1.5 bg-[#07182f]/20"
+                    i === index ? "w-6 bg-[#f3b23f]" : "w-1.5 bg-[#07182f]/20"
                   }`}
                 />
               ))}
@@ -211,7 +207,6 @@ export default function AboutPage() {
 
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-
             {/* Left – text */}
             <div className="space-y-7">
               <motion.div
@@ -226,7 +221,11 @@ export default function AboutPage() {
               <motion.h1
                 initial={{ opacity: 0, y: 28 }}
                 animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.72, delay: 0.1, ease: [0.19, 1, 0.22, 1] }}
+                transition={{
+                  duration: 0.72,
+                  delay: 0.1,
+                  ease: [0.19, 1, 0.22, 1],
+                }}
                 className="font-serif text-[clamp(3.1rem,5.1vw,4.25rem)] leading-[0.96] max-sm:text-[clamp(2.75rem,11.7vw,4.1rem)] max-sm:leading-[1.02]"
               >
                 A Heritage of Passion.
@@ -237,7 +236,11 @@ export default function AboutPage() {
               <motion.p
                 initial={{ opacity: 0, y: 22 }}
                 animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.72, delay: 0.22, ease: [0.19, 1, 0.22, 1] }}
+                transition={{
+                  duration: 0.72,
+                  delay: 0.22,
+                  ease: [0.19, 1, 0.22, 1],
+                }}
                 className="text-[1.05rem] text-white/80 leading-8 max-w-xl"
               >
                 Our journey began with a simple love for ice cream and a dream
@@ -249,7 +252,11 @@ export default function AboutPage() {
             <motion.div
               initial={{ opacity: 0, x: 40 }}
               animate={{ opacity: 1, x: 0 }}
-              transition={{ duration: 0.9, delay: 0.18, ease: [0.19, 1, 0.22, 1] }}
+              transition={{
+                duration: 0.9,
+                delay: 0.18,
+                ease: [0.19, 1, 0.22, 1],
+              }}
               className="relative w-full h-[500px] overflow-hidden"
             >
               <Image
@@ -318,32 +325,60 @@ export default function AboutPage() {
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-            {([
+            {[
               {
                 icon: "Award" as const,
                 title: "Premium Quality",
                 desc: "Using only the finest ingredients sourced globally.",
-                anim: { animate: { rotate: [0, -10, 10, -5, 0], y: [0, -3, 0] }, transition: { duration: 2.2, repeat: Infinity, ease: "easeInOut" as const } },
+                anim: {
+                  animate: { rotate: [0, -10, 10, -5, 0], y: [0, -3, 0] },
+                  transition: {
+                    duration: 2.2,
+                    repeat: Infinity,
+                    ease: "easeInOut" as const,
+                  },
+                },
               },
               {
                 icon: "Zap" as const,
                 title: "Innovation Driven",
                 desc: "Constant evolution of flavors and manufacturing.",
-                anim: { animate: { scale: [1, 1.2, 1], opacity: [1, 0.7, 1] }, transition: { duration: 1.4, repeat: Infinity, ease: "easeInOut" as const } },
+                anim: {
+                  animate: { scale: [1, 1.2, 1], opacity: [1, 0.7, 1] },
+                  transition: {
+                    duration: 1.4,
+                    repeat: Infinity,
+                    ease: "easeInOut" as const,
+                  },
+                },
               },
               {
                 icon: "Users" as const,
                 title: "Customer Focused",
                 desc: "Every scoop is designed for your ultimate satisfaction.",
-                anim: { animate: { y: [0, -4, 0], x: [0, 2, -2, 0] }, transition: { duration: 2.4, repeat: Infinity, ease: "easeInOut" as const } },
+                anim: {
+                  animate: { y: [0, -4, 0], x: [0, 2, -2, 0] },
+                  transition: {
+                    duration: 2.4,
+                    repeat: Infinity,
+                    ease: "easeInOut" as const,
+                  },
+                },
               },
               {
                 icon: "ShieldCheck" as const,
                 title: "Proudly Nigerian",
                 desc: "Building local excellence with international standards.",
-                anim: { animate: { scale: [1, 1.1, 1], y: [0, -3, 0] }, transition: { duration: 2, repeat: Infinity, ease: "easeInOut" as const } },
+                anim: {
+                  animate: { scale: [1, 1.1, 1], y: [0, -3, 0] },
+                  transition: {
+                    duration: 2,
+                    repeat: Infinity,
+                    ease: "easeInOut" as const,
+                  },
+                },
               },
-            ]).map((promise, i) => {
+            ].map((promise, i) => {
               const IconComp = { Award, Zap, Users, ShieldCheck }[promise.icon];
               return (
                 <motion.div
@@ -351,7 +386,11 @@ export default function AboutPage() {
                   initial={{ opacity: 0, y: 24 }}
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true, margin: "-60px" }}
-                  transition={{ duration: 0.6, delay: i * 0.08, ease: [0.19, 1, 0.22, 1] }}
+                  transition={{
+                    duration: 0.6,
+                    delay: i * 0.08,
+                    ease: [0.19, 1, 0.22, 1],
+                  }}
                   className="p-8 rounded-2xl bg-white/5 border border-white/10 hover:border-[#f3b23f]/50 transition-all group"
                 >
                   <motion.div

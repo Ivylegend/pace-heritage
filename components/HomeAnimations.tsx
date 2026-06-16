@@ -346,7 +346,7 @@ export function DistributionSection({ container }: { container: string }) {
 /* ─── Private label section ──────────────────────────────────── */
 export function PrivateLabelSection({ container }: { container: string }) {
   return (
-    <section className="bg-white py-20 md:py-24" id="private-label">
+    <section className="overflow-hidden bg-white py-20 md:py-24" id="private-label">
       <div
         className={`${container} grid items-center gap-10 lg:grid-cols-[minmax(0,0.78fr)_minmax(420px,1fr)]`}
       >

@@ -1,5 +1,7 @@
 import type { Metadata } from "next";
 import { Inter, Playfair_Display, Jost } from "next/font/google";
+import Image from "next/image";
+import Link from "next/link";
 import "./globals.css";
 
 const inter = Inter({
@@ -78,7 +80,22 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" className={`${inter.variable} ${playfair.variable} ${jost.variable}`} data-scroll-behavior="smooth">
-      <body>{children}</body>
+      <body>
+        {children}
+        <Link
+          className="fixed right-6 bottom-6 z-50 grid h-14 w-14 place-items-center rounded-full bg-[#24d366] text-sm font-black text-white shadow-[0_16px_36px_rgba(36,211,102,0.32)] transition hover:bg-[#2be06f] hover:scale-110 hover:shadow-[0_20px_44px_rgba(36,211,102,0.4)] max-sm:right-4 max-sm:bottom-4 max-sm:h-13 max-sm:w-13"
+          href="https://wa.me/2348031234567"
+          aria-label="Chat on WhatsApp"
+        >
+          <Image
+            src="/icons/whatsapp.svg"
+            width={32}
+            height={32}
+            alt="whatsapp"
+            loading="eager"
+          />
+        </Link>
+      </body>
     </html>
   );
 }
