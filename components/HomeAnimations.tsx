@@ -1,6 +1,7 @@
 "use client";
 
 import Image from "next/image";
+import { AfricaDistributionMap } from "@/components/AfricaDistributionMap";
 import Link from "next/link";
 import {
   ArrowRight,
@@ -335,15 +336,7 @@ export function DistributionSection({ container }: { container: string }) {
           viewport={{ once: true, margin: "-80px" }}
           transition={{ duration: 0.85, delay: 0.1, ease }}
         >
-          <Image
-            className="w-full"
-            src="/images/distribution_africa_bg_removed.png"
-            alt="Distribution map highlighting Nigeria and expansion across Africa"
-            width={1724}
-            height={912}
-            style={{ height: "auto" }}
-            sizes="(max-width: 900px) 100vw, 58vw"
-          />
+          <AfricaDistributionMap />
         </motion.div>
       </div>
     </section>
