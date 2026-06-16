@@ -26,3 +26,6 @@ img {
     scroll-behavior: auto;
   }
 }
+
+@import "./dry-mix-theme.css";
+@import "./cones-theme.css";

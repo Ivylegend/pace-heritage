@@ -6,6 +6,8 @@ import { Navbar } from "@/components/Navbar";
 import { Footer } from "@/components/Footer";
 import { products, getProductBySlug } from "@/lib/products";
 import type { Metadata } from "next";
+import DryMixProductPage from "@/components/DryMixProductPage";
+import ConesProductPage from "@/components/ConesProductPage";
 
 /* ── Static params ───────────────────────────────────────────── */
 export async function generateStaticParams() {
@@ -43,6 +45,30 @@ export default async function ProductPage({
   /* sibling products (exclude current) */
   const related = products.filter((p) => p.slug !== product.slug).slice(0, 3);
 
+  if (slug === "comprital-soft-ice-cream-premix") {
+    return (
+      <>
+        <Navbar />
+        <main>
+          <DryMixProductPage />
+        </main>
+        <Footer />
+      </>
+    );
+  }
+
+  if (slug === "pace-ice-cream-cones") {
+    return (
+      <>
+        <Navbar />
+        <main>
+          <ConesProductPage />
+        </main>
+        <Footer />
+      </>
+    );
+  }
+
   return (
     <>
       <Navbar />
@@ -54,7 +80,7 @@ export default async function ProductPage({
 
           <div className="mx-auto w-[min(1180px,calc(100%-40px))] grid items-center gap-12 lg:grid-cols-2">
             {/* Text side */}
-            <div className="order-2 lg:order-1">
+            <div className="order-1 lg:order-1">
               {/* breadcrumb */}
               <Link
                 href="/#products"
@@ -79,7 +105,7 @@ export default async function ProductPage({
               </p>
 
               <Link
-                href="/#contact"
+                href="mailto:info@paceheritage.com"
                 className="mt-8 inline-flex min-h-12 items-center justify-center gap-3 rounded-[10px] bg-linear-to-br from-[#c8791c] to-[#f3b23f] px-7 text-sm font-semibold text-white shadow-[0_14px_34px_rgba(217,149,36,0.32)] transition hover:-translate-y-0.5 hover:shadow-[0_18px_44px_rgba(217,149,36,0.42)]"
               >
                 Request Wholesale Quote
@@ -88,7 +114,7 @@ export default async function ProductPage({
             </div>
 
             {/* Image side */}
-            <div className="order-1 flex items-center justify-center lg:order-2">
+            <div className="order-2 flex items-center justify-center lg:order-2">
               <div className="relative flex h-[340px] w-full max-w-[440px] items-center justify-center lg:h-[440px]">
                 {/* glow behind image */}
                 <div className="absolute inset-0 rounded-3xl bg-[radial-gradient(circle_at_50%_60%,rgba(243,178,63,0.18),transparent_65%)]" />
@@ -144,7 +170,7 @@ export default async function ProductPage({
               </dl>
 
               <Link
-                href="/#contact"
+                href="mailto:info@paceheritage.com"
                 className="mt-6 flex min-h-11 items-center justify-center gap-2 rounded-[10px] border border-[#c8791c]/40 bg-[#c8791c]/6 px-5 text-sm font-semibold text-[#c8791c] transition hover:bg-[#c8791c]/12 hover:border-[#c8791c]/70"
               >
                 Enquire about this product

@@ -21,7 +21,7 @@ export const products: Product[] = [
     description:
       "Pace Heritage Ice Cream is crafted with premium ingredients to deliver an authentic, creamy experience loved by Nigerians. Available in a wide range of flavours, our retail ice cream line is trusted by retailers and consumers nationwide.",
     image: "/images/ice-cream.png",
-    heroImage: "/images/product-ice-cream.png",
+    heroImage: "/images/ice-cream.png",
     features: [
       "Premium dairy ingredients",
       "Wide range of flavours",
@@ -46,7 +46,7 @@ export const products: Product[] = [
     description:
       "Venezia One Pint Gourmet Ice Cream brings the elegance of European-style ice cream to the African market. Made with rich, authentic ingredients and crafted in small-batch inspired processes, each pint is a premium indulgence.",
     image: "/images/gourmet.png",
-    heroImage: "/images/product-retail-range.png",
+    heroImage: "/images/gourmet.png",
     features: [
       "European-inspired gourmet recipe",
       "Rich, dense cream base",
@@ -71,7 +71,7 @@ export const products: Product[] = [
     description:
       "Venezia Italian Gelato is made using traditional Italian techniques to deliver a denser, silkier frozen dessert with an intense flavour profile. Lower in fat and air than regular ice cream, it offers a more authentic gelato experience.",
     image: "/images/gelato.png",
-    heroImage: "/images/product-gelato.png",
+    heroImage: "/images/gelato.png",
     features: [
       "Traditional Italian gelato method",
       "Denser, silkier texture",

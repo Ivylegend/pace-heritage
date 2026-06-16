@@ -105,7 +105,7 @@ export function HeroAnimations({ container }: { container: string }) {
           transition={{ duration: 0.72, delay: 0.32, ease }}
           className="mt-6 flex flex-wrap gap-4 max-sm:flex-col"
         >
-          <Link className={primaryButton} href="/#contact">
+          <Link className={primaryButton} href="mailto:info@paceheritage.com">
             Request Wholesale Quote
             <ArrowRight className="h-4 w-4" />
           </Link>
@@ -324,7 +324,7 @@ export function DistributionSection({ container }: { container: string }) {
             description="Pace Heritage supplies premium ice cream to retailers across Nigeria and is expanding into other African markets."
             light
           />
-          <Link className={ghostButton} href="/#contact">
+          <Link className={ghostButton} href="mailto:info@paceheritage.com">
             Become a Distributor
             <ArrowRight className="h-4 w-4" />
           </Link>
@@ -356,7 +356,7 @@ export function PrivateLabelSection({ container }: { container: string }) {
             title="Your Brand. Our Expertise. Endless Possibilities."
             description="We help brands bring their vision to life with custom formulations, premium ingredients, and world-class manufacturing."
           />
-          <Link className={primaryButton} href="/#contact">
+          <Link className={primaryButton} href="mailto:info@paceheritage.com">
             Start Your Private Label Journey
             <ArrowRight className="h-4 w-4" />
           </Link>

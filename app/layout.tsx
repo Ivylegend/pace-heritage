@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Inter, Playfair_Display } from "next/font/google";
+import { Inter, Playfair_Display, Jost } from "next/font/google";
 import "./globals.css";
 
 const inter = Inter({
@@ -10,6 +10,12 @@ const inter = Inter({
 
 const playfair = Playfair_Display({
   variable: "--font-display",
+  subsets: ["latin"],
+  display: "swap",
+});
+
+const jost = Jost({
+  variable: "--font-jost",
   subsets: ["latin"],
   display: "swap",
 });
@@ -71,7 +77,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className={`${inter.variable} ${playfair.variable}`} data-scroll-behavior="smooth">
+    <html lang="en" className={`${inter.variable} ${playfair.variable} ${jost.variable}`} data-scroll-behavior="smooth">
       <body>{children}</body>
     </html>
   );
