@@ -114,7 +114,21 @@
   .hero {
     position: relative;
     overflow: hidden;
-    padding-top: 110px;
+    padding-top: 140px;
+    padding-bottom: 90px;
+    background: radial-gradient(circle at 66% 35%, rgba(17, 166, 232, 0.24), transparent 34%), linear-gradient(125deg, #05142b 0%, #071a34 48%, #020d20 100%);
+    color: #fff;
+    font-family: var(--font-inter), sans-serif;
+  }
+
+  .hero::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(90deg, rgba(255, 255, 255, 0.035) 1px, transparent 1px), linear-gradient(rgba(255, 255, 255, 0.035) 1px, transparent 1px);
+    background-size: 72px 72px;
+    pointer-events: none;
+    z-index: 0;
   }
 
   .hero-grid {
@@ -122,6 +136,8 @@
     grid-template-columns: 1fr 1fr;
     gap: 0;
     align-items: stretch;
+    position: relative;
+    z-index: 2;
   }
 
   .hero-copy {
@@ -132,8 +148,8 @@
     display: inline-flex;
     align-items: center;
     gap: 9px;
-    background: #fdfaf2;
-    border: 1px solid rgba(200, 137, 58, .4);
+    background: rgba(255, 255, 255, 0.08);
+    border: 1px solid rgba(255, 255, 255, 0.15);
     border-radius: 999px;
     padding: 8px 18px;
     margin-bottom: 22px;
@@ -141,13 +157,13 @@
     font-weight: 600;
     letter-spacing: .18em;
     text-transform: uppercase;
-    color: var(--gold-text);
+    color: var(--gold-bright);
   }
 
   .hero-badge svg {
     width: 15px;
     height: 15px;
-    stroke: var(--gold);
+    stroke: var(--gold-bright);
     fill: none;
     stroke-width: 1.8;
     stroke-linecap: round;
@@ -159,15 +175,16 @@
     line-height: 1.1;
     font-weight: 600;
     margin-bottom: 22px;
+    color: #fff;
   }
 
   .hero h1 .gold {
-    color: var(--gold-text);
+    color: var(--gold-bright);
   }
 
   .hero p.lead {
     max-width: 400px;
-    color: var(--ink-soft);
+    color: rgba(255, 255, 255, 0.75);
     font-size: 17px;
     margin-bottom: 32px;
   }
@@ -177,6 +194,22 @@
     gap: 14px;
     flex-wrap: wrap;
     margin-bottom: 42px;
+  }
+
+  .hero .btn {
+    font-family: var(--font-inter), sans-serif;
+  }
+
+  .hero .btn-outline {
+    background: rgba(255, 255, 255, 0.06);
+    color: #fff;
+    border-color: rgba(255, 255, 255, 0.25);
+  }
+
+  .hero .btn-outline:hover {
+    background: rgba(255, 255, 255, 0.12);
+    border-color: var(--gold-bright);
+    color: var(--gold-bright);
   }
 
   .hero-mini {
@@ -196,7 +229,7 @@
     width: 44px;
     height: 44px;
     border-radius: 50%;
-    border: 1.5px solid rgba(200, 137, 58, .5);
+    border: 1.5px solid rgba(224, 166, 76, .5);
     display: flex;
     align-items: center;
     justify-content: center;
@@ -204,13 +237,13 @@
   }
 
   .mini:hover .mini-icon {
-    background: rgba(200, 137, 58, .1);
+    background: rgba(224, 166, 76, .15);
   }
 
   .mini-icon svg {
     width: 21px;
     height: 21px;
-    stroke: var(--gold);
+    stroke: var(--gold-bright);
     fill: none;
     stroke-width: 1.6;
     stroke-linecap: round;
@@ -221,11 +254,11 @@
     font-size: 14px;
     font-weight: 500;
     line-height: 1.35;
+    color: rgba(255, 255, 255, 0.85);
   }
 
   .hero-visual {
     position: relative;
-    background: linear-gradient(150deg, #2a3c5e 0%, #16243d 55%, #0d1a30 100%);
     display: flex;
     align-items: flex-end;
     justify-content: center;
