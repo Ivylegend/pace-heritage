@@ -9,24 +9,12 @@ const container =
   "mx-auto w-[min(1180px,calc(100%_-_40px))] max-sm:w-[calc(100%_-_28px)]";
 
 export function Retailers() {
-  const renderRetailer = (retailer: string, index: number) => {
-    if (index === 0) {
+  const renderRetailer = (retailer: { name: string; logo?: string; colorClass?: string }) => {
+    if (retailer.logo) {
       return (
         <Image
-          src="/icons/spar-logo.png"
-          alt="SPAR Logo"
-          width={120}
-          height={32}
-          style={{ width: "auto", height: "auto" }}
-          className="mx-auto h-8 w-auto object-contain transition duration-300 hover:scale-105"
-        />
-      );
-    }
-    if (index === 1) {
-      return (
-        <Image
-          src="/icons/shoprite.png"
-          alt="Shoprite Logo"
+          src={retailer.logo}
+          alt={`${retailer.name} Logo`}
           width={120}
           height={32}
           style={{ width: "auto", height: "auto" }}
@@ -38,12 +26,10 @@ export function Retailers() {
       <span
         className={[
           "text-[clamp(1.05rem,2.2vw,1.55rem)] font-black whitespace-nowrap",
-          index === 2 ? "text-[#8a4a2e]" : "",
-          index === 3 ? "text-[#17406c]" : "",
-          index === 4 ? "text-[#18844d]" : "",
+          retailer.colorClass || "",
         ].join(" ")}
       >
-        {retailer}
+        {retailer.name}
       </span>
     );
   };
@@ -70,26 +56,26 @@ export function Retailers() {
             animate={{ x: ["0%", "-50%"] }}
             transition={{
               ease: "linear",
-              duration: 18,
+              duration: 30,
               repeat: Infinity,
             }}
           >
             {/* Original set */}
-            {retailers.map((retailer, index) => (
+            {retailers.map((retailer) => (
               <div
-                key={`${retailer}-orig`}
+                key={`${retailer.name}-orig`}
                 className="mx-10 shrink-0 flex items-center justify-center min-w-[120px] md:mx-16 md:min-w-[160px]"
               >
-                {renderRetailer(retailer, index)}
+                {renderRetailer(retailer)}
               </div>
             ))}
             {/* Duplicated set for seamless loop */}
-            {retailers.map((retailer, index) => (
+            {retailers.map((retailer) => (
               <div
-                key={`${retailer}-dup`}
+                key={`${retailer.name}-dup`}
                 className="mx-10 shrink-0 flex items-center justify-center min-w-[120px] md:mx-16 md:min-w-[160px]"
               >
-                {renderRetailer(retailer, index)}
+                {renderRetailer(retailer)}
               </div>
             ))}
           </motion.div>

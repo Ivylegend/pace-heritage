@@ -67,4 +67,15 @@ export const distributionFeatures = [
   "Retailer partnerships",
 ];
 
-export const retailers = ["SPAR", "SHOPRITE", "Pistinut", "Just Food", "MartPlus"];
+export const retailers = [
+  { name: "SPAR", logo: "/icons/spar-logo.png" },
+  { name: "SHOPRITE", logo: "/images/shoprite.png" },
+  // { name: "Pistinut", colorClass: "text-[#8a4a2e]" },
+  // { name: "Just Food", colorClass: "text-[#17406c]" },
+  // { name: "MartPlus", colorClass: "text-[#18844d]" },
+  { name: "Chicken Republic", logo: "/images/Chicken_Republic_Logo.svg.png" },
+  { name: "Dessert Studio", logo: "/images/dessertstudio.jpg" },
+  { name: "Inem Sweetness Place", logo: "/images/inemsweetnessplace.jpg" },
+  { name: "Rubels & Angels", logo: "/images/rubelsandangels_logo.png" },
+  { name: "Tinaries Bakery", logo: "/images/tinariesbakery.jpg" },
+];
