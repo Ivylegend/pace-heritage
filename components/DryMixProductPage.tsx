@@ -1,5 +1,6 @@
 "use client";
 
+import Image from "next/image";
 import { ProfitCalculator, useReveal } from "./ProductPageClient";
 import Link from "next/link";
 
@@ -20,8 +21,8 @@ export default function DryMixProductPage() {
               Our premium ice cream dry mix helps you create smooth, delicious ice cream that customers love and keeps your profits growing.
             </p>
             <div className="hero-ctas ph-reveal reveal-delay-3">
-              <Link href="mailto:info@paceheritage.com" className="btn btn-gold">
-                Request Wholesale Pricing
+              <Link href="mailto:info@paceheritage.com" className="btn btn-primary">
+                Order Dry Mix
                 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
                   <path d="M5 12h14M13 6l6 6-6 6" />
                 </svg>
@@ -36,88 +37,14 @@ export default function DryMixProductPage() {
           </div>
 
           <div className="hero-visual ph-reveal reveal-delay-2">
-            <div className="hero-stage" role="img" aria-label="Pace Heritage 20kg premium ice cream dry mix bag with soft serve cone and ice cream scoops">
-              {/* product bag */}
-              <div className="bag-wrap">
-                <svg viewBox="0 0 300 400" xmlns="http://www.w3.org/2000/svg">
-                  <defs>
-                    <linearGradient id="bagBody" x1="0" y1="0" x2="1" y2="1">
-                      <stop offset="0" stopColor="#ffffff" />
-                      <stop offset=".55" stopColor="#f4f4f6" />
-                      <stop offset="1" stopColor="#e3e4e9" />
-                    </linearGradient>
-                    <linearGradient id="swooshBlue" x1="0" y1="0" x2="1" y2="0">
-                      <stop offset="0" stopColor="#2a7fc1" />
-                      <stop offset="1" stopColor="#1b5fa0" />
-                    </linearGradient>
-                    <linearGradient id="swooshPink" x1="0" y1="0" x2="1" y2="0">
-                      <stop offset="0" stopColor="#c2358f" />
-                      <stop offset="1" stopColor="#9c2374" />
-                    </linearGradient>
-                  </defs>
-                  {/* crimped top */}
-                  <path d="M48 38 L252 38 L246 64 L54 64 Z" fill="#d9dade" />
-                  <path d="M48 38 L252 38 L250 48 L50 48 Z" fill="#c6c8ce" />
-                  {/* bag body */}
-                  <path d="M54 64 L246 64 Q258 200 250 356 Q252 374 232 376 L68 376 Q48 374 50 356 Q42 200 54 64 Z" fill="url(#bagBody)" />
-                  <path d="M54 64 L246 64 Q258 200 250 356 Q252 374 232 376 L68 376 Q48 374 50 356 Q42 200 54 64 Z" fill="none" stroke="#cfd1d7" strokeWidth="1.5" />
-                  {/* branding */}
-                  <text x="150" y="118" textAnchor="middle" fontFamily="'Playfair Display',serif" fontSize="26" fontWeight="600" letterSpacing="4" fill="#1d2d52">PACE</text>
-                  <text x="150" y="150" textAnchor="middle" fontFamily="'Playfair Display',serif" fontSize="26" fontWeight="600" letterSpacing="3" fill="#1d2d52">HERITAGE</text>
-                  <text x="150" y="186" textAnchor="middle" fontFamily="var(--font-jost),sans-serif" fontSize="16.5" fill="#23355e">Premium Ice Cream</text>
-                  <text x="150" y="208" textAnchor="middle" fontFamily="var(--font-jost),sans-serif" fontSize="16.5" fill="#23355e">Dry Mix</text>
-                  {/* swoosh */}
-                  <path d="M84 268 Q150 226 224 252 Q160 250 112 282 Q96 290 84 268 Z" fill="url(#swooshBlue)" />
-                  <path d="M96 296 Q166 252 228 278 Q168 278 124 308 Q106 316 96 296 Z" fill="url(#swooshPink)" />
-                  {/* weight */}
-                  <text x="222" y="348" textAnchor="middle" fontFamily="var(--font-jost),sans-serif" fontSize="19" fontWeight="600" fill="#1d2d52">20kg</text>
-                  <text x="222" y="364" textAnchor="middle" fontFamily="var(--font-jost),sans-serif" fontSize="9" letterSpacing="1.5" fill="#5a6885">NET WEIGHT</text>
-                </svg>
-              </div>
-              {/* soft serve cone */}
-              <div className="cone-wrap">
-                <svg viewBox="0 0 120 260" xmlns="http://www.w3.org/2000/svg">
-                  <defs>
-                    <linearGradient id="coneG" x1="0" y1="0" x2="1" y2="1">
-                      <stop offset="0" stopColor="#d99a4e" />
-                      <stop offset="1" stopColor="#a96a2c" />
-                    </linearGradient>
-                    <linearGradient id="creamG" x1="0" y1="0" x2="0" y2="1">
-                      <stop offset="0" stopColor="#fdf6e6" />
-                      <stop offset="1" stopColor="#e9d9b8" />
-                    </linearGradient>
-                  </defs>
-                  <path d="M60 252 L24 130 L96 130 Z" fill="url(#coneG)" />
-                  <path d="M30 142 L92 142 M36 160 L88 160 M42 178 L82 178 M48 196 L76 196 M54 214 L70 214" stroke="#8a5523" strokeWidth="2" opacity=".55" />
-                  <ellipse cx="60" cy="128" rx="40" ry="13" fill="#c98f45" />
-                  <path d="M60 8 Q78 18 70 32 Q92 32 86 52 Q104 56 94 76 Q108 84 96 102 Q106 116 88 124 L32 124 Q14 116 26 102 Q12 84 28 76 Q18 56 36 52 Q30 32 52 32 Q44 16 60 8 Z" fill="url(#creamG)" />
-                  <path d="M40 118 Q60 108 82 118 M34 98 Q60 88 88 98 M40 76 Q60 68 82 76 M48 54 Q62 48 74 54" stroke="#d4c096" strokeWidth="2.5" fill="none" opacity=".8" />
-                </svg>
-              </div>
-              {/* bowl of scoops */}
-              <div className="scoops-wrap">
-                <svg viewBox="0 0 220 150" xmlns="http://www.w3.org/2000/svg">
-                  <defs>
-                    <radialGradient id="sV" cx=".35" cy=".3" r="1">
-                      <stop offset="0" stopColor="#fbf3dd" />
-                      <stop offset="1" stopColor="#d9c79c" />
-                    </radialGradient>
-                    <radialGradient id="sP" cx=".35" cy=".3" r="1">
-                      <stop offset="0" stopColor="#f6a8c0" />
-                      <stop offset="1" stopColor="#d76b92" />
-                    </radialGradient>
-                    <radialGradient id="sC" cx=".35" cy=".3" r="1">
-                      <stop offset="0" stopColor="#84563a" />
-                      <stop offset="1" stopColor="#4e2f1b" />
-                    </radialGradient>
-                  </defs>
-                  <circle cx="70" cy="58" r="34" fill="url(#sP)" />
-                  <circle cx="146" cy="56" r="36" fill="url(#sC)" />
-                  <circle cx="108" cy="78" r="34" fill="url(#sV)" />
-                  <path d="M28 92 L192 92 Q188 134 152 140 L68 140 Q32 134 28 92 Z" fill="#10182b" />
-                  <path d="M28 92 L192 92 Q188 134 152 140 L68 140 Q32 134 28 92 Z" fill="none" stroke="#26334e" strokeWidth="2" />
-                </svg>
-              </div>
+            <div className="hero-stage" role="img" aria-label="Pace Heritage Comprital Dry Mix 1kg and 2kg packs">
+              <Image
+                src="/images/comparital/Main_Page_1kg_2kg_.png"
+                alt="Pace Heritage Comprital Dry Mix 1kg and 2kg packs"
+                fill
+                className="object-contain p-6 relative z-10"
+                priority
+              />
             </div>
           </div>
         </div>
@@ -194,17 +121,12 @@ export default function DryMixProductPage() {
             <div className="orbit ph-reveal reveal-delay-1">
               <div className="orbit-ring" aria-hidden="true" />
               <div className="orbit-center">
-                <svg viewBox="0 0 150 200" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Pace Heritage dry mix bag">
-                  <path d="M26 20 L124 20 L121 33 L29 33 Z" fill="#d9dade" />
-                  <path d="M29 33 L121 33 Q127 100 123 176 Q124 187 113 188 L37 188 Q26 187 27 176 Q23 100 29 33 Z" fill="#f2f2f4" stroke="#cfd1d7" />
-                  <text x="75" y="62" textAnchor="middle" fontFamily="'Playfair Display',serif" fontSize="13" fontWeight="600" letterSpacing="1.5" fill="#1d2d52">PACE</text>
-                  <text x="75" y="78" textAnchor="middle" fontFamily="'Playfair Display',serif" fontSize="13" fontWeight="600" letterSpacing="1" fill="#1d2d52">HERITAGE</text>
-                  <text x="75" y="98" textAnchor="middle" fontFamily="var(--font-jost),sans-serif" fontSize="9" fill="#23355e">Premium Ice Cream</text>
-                  <text x="75" y="110" textAnchor="middle" fontFamily="var(--font-jost),sans-serif" fontSize="9" fill="#23355e">Dry Mix</text>
-                  <path d="M44 138 Q75 118 110 130 Q78 130 56 145 Q48 149 44 138 Z" fill="#2a7fc1" />
-                  <path d="M50 152 Q82 132 112 144 Q84 144 62 158 Q54 162 50 152 Z" fill="#c2358f" />
-                  <text x="75" y="178" textAnchor="middle" fontFamily="var(--font-jost),sans-serif" fontSize="10" fontWeight="600" fill="#1d2d52">20kg</text>
-                </svg>
+                <Image
+                  src="/images/comparital/one product. multipl revenue.png"
+                  alt="One Product, Multiple Revenue Streams"
+                  fill
+                  className="object-contain"
+                />
               </div>
               <div className="orbit-node top">
                 <div className="node-icon">
@@ -331,17 +253,13 @@ export default function DryMixProductPage() {
           <p className="eyebrow ph-reveal">Our Dry Mix Variants</p>
           <div className="variants-grid">
             <article className="variant ph-reveal">
-              <svg className="scoop-art" viewBox="0 0 96 108" aria-hidden="true">
-                <radialGradient id="vSc" cx=".35" cy=".3" r="1">
-                  <stop offset="0" stopColor="#fdf6e2" />
-                  <stop offset="1" stopColor="#d8c391" />
-                </radialGradient>
-                <circle cx="48" cy="44" r="34" fill="url(#vSc)" />
-                <path d="M30 36q8-8 18-6M26 50q4 6 12 7" stroke="#c9b27c" strokeWidth="2.5" fill="none" strokeLinecap="round" opacity=".7" />
-                <ellipse cx="48" cy="88" rx="34" ry="10" fill="#0f1a30" />
-                <path d="M40 78q8-6 16 0l-4 8h-8Z" fill="#e9dfc2" />
-                <circle cx="48" cy="74" r="3" fill="#e0a64c" />
-              </svg>
+              <Image
+                className="scoop-art object-contain"
+                src="/images/comparital/Our Dry Mix Variants _van.png"
+                alt="Vanilla variant"
+                width={96}
+                height={108}
+              />
               <div>
                 <h3>Vanilla</h3>
                 <p className="badge">Most Popular</p>
@@ -363,17 +281,13 @@ export default function DryMixProductPage() {
             </article>
 
             <article className="variant ph-reveal reveal-delay-1">
-              <svg className="scoop-art" viewBox="0 0 96 108" aria-hidden="true">
-                <radialGradient id="cSc" cx=".35" cy=".3" r="1">
-                  <stop offset="0" stopColor="#8a5a3a" />
-                  <stop offset="1" stopColor="#46281a" />
-                </radialGradient>
-                <circle cx="48" cy="44" r="34" fill="url(#cSc)" />
-                <path d="M30 36q8-8 18-6M26 50q4 6 12 7" stroke="#5d3a24" strokeWidth="2.5" fill="none" strokeLinecap="round" opacity=".8" />
-                <ellipse cx="48" cy="88" rx="34" ry="10" fill="#0f1a30" />
-                <rect x="36" y="72" width="12" height="9" rx="2" fill="#5b3520" transform="rotate(-12 42 76)" />
-                <rect x="50" y="74" width="12" height="9" rx="2" fill="#3e2212" transform="rotate(10 56 78)" />
-              </svg>
+              <Image
+                className="scoop-art object-contain"
+                src="/images/comparital/Our Dry Mix Variants_choc.png"
+                alt="Chocolate variant"
+                width={96}
+                height={108}
+              />
               <div>
                 <h3>Chocolate</h3>
                 <p className="badge">Rich &amp; Creamy</p>
@@ -395,18 +309,13 @@ export default function DryMixProductPage() {
             </article>
 
             <article className="variant ph-reveal reveal-delay-2">
-              <svg className="scoop-art" viewBox="0 0 96 108" aria-hidden="true">
-                <radialGradient id="pSc" cx=".35" cy=".3" r="1">
-                  <stop offset="0" stopColor="#f8b3c8" />
-                  <stop offset="1" stopColor="#d56a90" />
-                </radialGradient>
-                <circle cx="48" cy="44" r="34" fill="url(#pSc)" />
-                <path d="M30 36q8-8 18-6M26 50q4 6 12 7" stroke="#c25e83" strokeWidth="2.5" fill="none" strokeLinecap="round" opacity=".7" />
-                <ellipse cx="48" cy="88" rx="34" ry="10" fill="#0f1a30" />
-                <path d="M56 72q8 1 8 9t-8 8-9-7q1-8 9-10Z" fill="#d3405f" />
-                <path d="M56 72q-2 8 0 17" stroke="#a92d47" strokeWidth="1.5" fill="none" />
-                <path d="M55 70q2-4 6-3-1 4-6 3Z" fill="#3f7d3f" />
-              </svg>
+              <Image
+                className="scoop-art object-contain"
+                src="/images/comparital/Our Dry Mix Variants_str.png"
+                alt="Strawberry variant"
+                width={96}
+                height={108}
+              />
               <div>
                 <h3>Strawberry</h3>
                 <p className="badge">Customer Favorite</p>

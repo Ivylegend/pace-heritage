@@ -143,7 +143,7 @@ export function HeroAnimations({ container }: { container: string }) {
 
         <Image
           className="relative z-10 mx-auto w-[min(760px,100%)] drop-shadow-[0_34px_44px_rgba(0,0,0,0.28)] lg:translate-y-10 lg:drop-shadow-[0_48px_58px_rgba(0,0,0,0.38)]"
-          src="/images/homepage/HeroPage.png"
+          src="/images/homepage/image.png"
           alt="Pace Heritage ice cream, cones, and dry mix products"
           width={1391}
           height={1131}
