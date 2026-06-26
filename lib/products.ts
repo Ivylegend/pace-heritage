@@ -20,8 +20,8 @@ export const products: Product[] = [
     tagline: "Nigeria's Favourite Premium Ice Cream",
     description:
       "Pace Heritage Ice Cream is crafted with premium ingredients to deliver an authentic, creamy experience loved by Nigerians. Available in a wide range of flavours, our retail ice cream line is trusted by retailers and consumers nationwide.",
-    image: "/images/ice-cream.png",
-    heroImage: "/images/ice-cream.png",
+    image: "/images/homepage/PaceHeritage Ice cream.png",
+    heroImage: "/images/homepage/PaceHeritage Ice cream.png",
     features: [
       "Premium dairy ingredients",
       "Wide range of flavours",
@@ -45,8 +45,8 @@ export const products: Product[] = [
     tagline: "Italian-Inspired Gourmet Indulgence",
     description:
       "Venezia One Pint Gourmet Ice Cream brings the elegance of European-style ice cream to the African market. Made with rich, authentic ingredients and crafted in small-batch inspired processes, each pint is a premium indulgence.",
-    image: "/images/gourmet.png",
-    heroImage: "/images/gourmet.png",
+    image: "/images/homepage/Retail_Ice_Cream_One pint.png",
+    heroImage: "/images/homepage/Retail_Ice_Cream_One pint.png",
     features: [
       "European-inspired gourmet recipe",
       "Rich, dense cream base",
@@ -70,8 +70,8 @@ export const products: Product[] = [
     tagline: "Authentic Italian Gelato, Crafted in Nigeria",
     description:
       "Venezia Italian Gelato is made using traditional Italian techniques to deliver a denser, silkier frozen dessert with an intense flavour profile. Lower in fat and air than regular ice cream, it offers a more authentic gelato experience.",
-    image: "/images/gelato.png",
-    heroImage: "/images/gelato.png",
+    image: "/images/homepage/Retail_Ice_Cream_Italian Gelato.png",
+    heroImage: "/images/venezia_product_page/Vibrant gelato display.png",
     features: [
       "Traditional Italian gelato method",
       "Denser, silkier texture",
@@ -95,8 +95,8 @@ export const products: Product[] = [
     tagline: "Professional-Grade Soft Serve Premix",
     description:
       "COMPRITAL Soft Ice Cream Premix is a professional-grade dry mix designed for ice cream parlours, restaurants, and manufacturers. Simply blend with water or milk for a consistently smooth, creamy soft serve every time.",
-    image: "/images/product-dry-mix.png",
-    heroImage: "/images/product-dry-mix.png",
+    image: "/images/homepage/Manufacturing Ingredients_dry mix.png",
+    heroImage: "/images/homepage/Manufacturing Ingredients_dry mix.png",
     features: [
       "Easy-mix dry powder format",
       "Consistent soft-serve results",
@@ -120,8 +120,8 @@ export const products: Product[] = [
     tagline: "Crispy, Freshly-Baked Wafer Cones",
     description:
       "PACE Ice Cream Cones are freshly baked wafer cones designed for use with retail and parlour ice cream products. Available in multiple sizes and styles — from classic wafer to sugar cones — they offer the perfect crunch to complement every scoop.",
-    image: "/images/product-cone.png",
-    heroImage: "/images/cone.png",
+    image: "/images/homepage/Manufacturing Ingredients_cone.png",
+    heroImage: "/images/homepage/Manufacturing Ingredients_cone.png",
     features: [
       "Freshly baked wafer cones",
       "Multiple sizes available",

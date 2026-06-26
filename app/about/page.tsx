@@ -20,7 +20,7 @@ const timelineData = [
     year: "Journey to Italy",
     title: "The Italian Inspiration",
     description:
-      "Our founders, Mr. & Mrs. Prosper C. Okigue, were inspired by the art and compassion Italian gelato makers put into every flavor, the ambience, and the rich aroma of Italian espresso and gelato shops.",
+      "Our founders, Mr. & Mrs. Prosper C. Okpue, were inspired by the art and compassion Italian gelato makers put into every flavor, the ambience, and the rich aroma of Italian espresso and gelato shops.",
     image: "/images/italy.png",
   },
   {
@@ -28,7 +28,7 @@ const timelineData = [
     title: "The Olde English Era",
     description:
       "The inspiration led to The Olde English Jazz Bar/Restaurant, where every meal was paired with exquisite ice cream desserts. It became a local Mecca for jazz lovers and a home for emerging artists.",
-    image: "/images/old-english.png",
+    image: "/images/old_english.png",
   },
   {
     year: "Innovation",
@@ -42,21 +42,21 @@ const timelineData = [
     title: "Building for Growth",
     description:
       "We moved to a 240 square meter factory at Lagos State Small Scale Industries Estate, Matori, Lagos, equipped with automatic machines and premium ingredients from leading Italian firms.",
-    image: "/images/hero-bg.png",
+    image: "/images/building_for_growth.png",
   },
   {
     year: "2005",
     title: "A New Chapter",
     description:
       "Pace expanded to a 1.5-hectare factory at Agbara Industrial Estate and secured NAFDAC certification in 2006 for all our products.",
-    image: "/images/new-chapter.png",
+    image: "/images/a_new_chapter.png",
   },
   {
     year: "Future",
     title: "Today & Beyond",
     description:
       "The Pace Heritage dream became reality, and the drive to achieve excellence remains unstoppable. We continue to innovate and deliver premium ice cream products across Nigeria and beyond.",
-    image: "/images/lick.png",
+    image: "/images/heritage_of_passion.png",
   },
 ];
 
@@ -196,7 +196,7 @@ export default function AboutPage() {
       <section className="relative isolate min-h-[760px] lg:h-screen max-lg:min-h-0 pt-[150px] pb-8 max-lg:pt-32 max-sm:pt-28 overflow-hidden bg-[radial-gradient(circle_at_66%_35%,rgba(17,166,232,0.28),transparent_33%),linear-gradient(125deg,#05142b_0%,#071a34_48%,#020d20_100%)] text-white">
         <Image
           className="absolute inset-0 -z-30 h-full w-full object-cover object-right opacity-[0.42] blur-[1px]"
-          src="/images/hero-bg.png"
+          src="/images/about_hero_bg.png"
           alt="Hero background"
           fill
           priority

@@ -123,7 +123,11 @@ export default async function ProductPage({
                   alt={`${product.brand} ${product.name}`}
                   width={800}
                   height={800}
-                  className="relative z-10 max-h-full w-auto object-contain drop-shadow-[0_30px_50px_rgba(0,0,0,0.4)]"
+                  className={`relative z-10 w-auto object-contain drop-shadow-[0_30px_50px_rgba(0,0,0,0.4)] ${
+                    product.slug === "paceheritage-ice-cream"
+                      ? "max-h-[85%]"
+                      : "max-h-full"
+                  }`}
                   priority
                 />
               </div>

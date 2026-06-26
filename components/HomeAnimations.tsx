@@ -142,8 +142,8 @@ export function HeroAnimations({ container }: { container: string }) {
         </motion.div>
 
         <Image
-          className="relative z-10 mx-auto w-[min(760px,100%)] drop-shadow-[0_34px_44px_rgba(0,0,0,0.28)] translate-x-10 lg:translate-x-20 lg:translate-y-10 lg:drop-shadow-[0_48px_58px_rgba(0,0,0,0.38)] scale-160"
-          src="/images/hero-2.png"
+          className="relative z-10 mx-auto w-[min(760px,100%)] drop-shadow-[0_34px_44px_rgba(0,0,0,0.28)] lg:translate-y-10 lg:drop-shadow-[0_48px_58px_rgba(0,0,0,0.38)]"
+          src="/images/homepage/HeroPage.png"
           alt="Pace Heritage ice cream, cones, and dry mix products"
           width={1391}
           height={1131}

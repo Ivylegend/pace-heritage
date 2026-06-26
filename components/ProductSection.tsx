@@ -71,7 +71,10 @@ export default function ProductCardsSection() {
                     className="group block"
                   >
                     <motion.div
-                      whileHover={{ y: -8, transition: { duration: 0.3, ease } }}
+                      whileHover={{
+                        y: -8,
+                        transition: { duration: 0.3, ease },
+                      }}
                       className="flex flex-col text-center"
                     >
                       <div
@@ -85,9 +88,13 @@ export default function ProductCardsSection() {
                           src={product.image}
                           alt={product.name}
                           style={{ width: "auto", height: "auto" }}
-                          className={`w-auto object-cover drop-shadow-xl ${
+                          className={`w-auto object-cover drop-shadow-xl transition-all duration-300 ${
                             section.darkHeader
-                              ? "max-h-[180px] scale-125 sm:scale-[2]"
+                              ? product.slug === "paceheritage-ice-cream"
+                                ? "max-h-[160px] scale-125 sm:scale-[1.4]"
+                                : product.slug === "venezia-gourmet-ice-cream"
+                                  ? "max-h-[160px] scale-125 sm:scale-[1.4]"
+                                  : "max-h-[160px] scale-125 sm:scale-[1.4]"
                               : "max-h-[190px]"
                           }`}
                         />

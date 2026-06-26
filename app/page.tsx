@@ -36,7 +36,7 @@ export default function Home() {
         >
           <Image
             className="absolute inset-0 -z-30 h-full w-full object-cover object-right opacity-[0.42] blur-[1px]"
-            src="/images/hero-bg.png"
+            src="/images/about_hero_bg.png"
             alt="Hero background"
             fill
             priority

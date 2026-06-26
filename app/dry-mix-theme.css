@@ -468,13 +468,16 @@
     position: absolute;
     width: 92px;
     text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
     transform: translate(-50%, -50%);
   }
 
   .orbit-node .node-icon {
     width: 66px;
     height: 66px;
-    margin: 0 auto 8px;
+    margin: 0 auto 4px;
     border-radius: 50%;
     background: var(--navy-800);
     border: 1.5px solid rgba(224, 166, 76, .55);
@@ -504,13 +507,16 @@
     color: var(--text);
   }
 
+  /* ring inset is 11%, so ring radius = (100% - 2×11%) / 2 = 39%
+     with translate(-50%,-50%) the declared left/top becomes the element centre,
+     so place each node at 50% ± 39% to sit its centre exactly on the ring */
   .orbit-node.top {
     left: 50%;
-    top: 6%;
+    top: 9%;
   }
 
   .orbit-node.right {
-    left: 94%;
+    left: 89%;
     top: 50%;
   }
 
@@ -520,7 +526,7 @@
   }
 
   .orbit-node.left {
-    left: 6%;
+    left: 11%;
     top: 50%;
   }
 
@@ -867,6 +873,20 @@
       width: 56px;
       height: 56px;
     }
+    /* label above icon for the top (Soft Serve) node only */
+    .orbit-node.top {
+      flex-direction: column-reverse;
+    }
+    .orbit-node.top .node-icon {
+      margin: 4px auto 0; /* gap now sits above the icon, below the label */
+    }
+  }
+
+  /* desktop: bring Soft Serve down slightly (mobile stays at 9% via the ≤560px block) */
+  @media (min-width: 561px) {
+    .orbit-node.top {
+      top: 13%;
+    }
   }
 }
 
@@ -876,11 +896,5 @@
   }
   50% {
     transform: translateY(-10px);
-  }
-}
-
-@keyframes spin {
-  to {
-    transform: rotate(360deg);
   }
 }
