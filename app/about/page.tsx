@@ -257,16 +257,37 @@ export default function AboutPage() {
                 delay: 0.18,
                 ease: [0.19, 1, 0.22, 1],
               }}
-              className="relative w-full h-[500px] overflow-hidden"
+              className="relative w-full h-[500px]"
             >
-              <Image
-                src="/images/ab.png"
-                alt="Premium Ice Cream"
-                fill
-                sizes="(max-width: 1024px) 100vw, 50vw"
-                priority
-                className="object-cover scale-110 lg:scale-120"
+              {/* Ambient Glow */}
+              <div
+                className="absolute inset-0 -z-10 opacity-50 blur-3xl scale-95 pointer-events-none select-none"
+                style={{
+                  backgroundImage: "url(/images/heritage_of_passion.png)",
+                  backgroundSize: "contain",
+                  backgroundPosition: "center",
+                  backgroundRepeat: "no-repeat",
+                }}
               />
+              {/* Feathered mask wrapper to blend the container's edges into the background */}
+              <div
+                className="relative w-full h-full"
+                style={{
+                  maskImage:
+                    "radial-gradient(ellipse at center, rgba(0,0,0,1) 50%, rgba(0,0,0,0) 95%)",
+                  WebkitMaskImage:
+                    "radial-gradient(ellipse at center, rgba(0,0,0,1) 50%, rgba(0,0,0,0) 95%)",
+                }}
+              >
+                <Image
+                  src="/images/heritage_of_passion.png" //ab.png
+                  alt="Premium Ice Cream"
+                  fill
+                  sizes="(max-width: 1024px) 100vw, 50vw"
+                  priority
+                  className="object-contain"
+                />
+              </div>
             </motion.div>
           </div>
         </div>

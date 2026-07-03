@@ -13,9 +13,9 @@ const productSections = [
     title: "Retail Ice Cream",
     darkHeader: true,
     slugs: [
+      "venezia-italian-gelato",
       "paceheritage-ice-cream",
       "venezia-gourmet-ice-cream",
-      "venezia-italian-gelato",
     ],
   },
   {
@@ -91,10 +91,10 @@ export default function ProductCardsSection() {
                           className={`w-auto object-cover drop-shadow-xl transition-all duration-300 ${
                             section.darkHeader
                               ? product.slug === "paceheritage-ice-cream"
-                                ? "max-h-[160px] scale-125 sm:scale-[1.4]"
+                                ? "max-h-[100px] scale-125 sm:scale-[1.4]"
                                 : product.slug === "venezia-gourmet-ice-cream"
-                                  ? "max-h-[160px] scale-125 sm:scale-[1.4]"
-                                  : "max-h-[160px] scale-125 sm:scale-[1.4]"
+                                  ? "max-h-[100px] scale-125 sm:scale-[1.0]"
+                                  : "max-h-[160px] scale-125 sm:scale-[1.5]"
                               : "max-h-[190px]"
                           }`}
                         />
