@@ -64,7 +64,7 @@ export function Navbar() {
 
         <Link
           className="hidden min-h-12 items-center justify-center gap-3 rounded-[10px] bg-linear-to-br from-[#c8791c] to-[#f3b23f] px-5 text-sm font-medium text-white shadow-[0_14px_34px_rgba(217,149,36,0.32)] transition hover:-translate-y-0.5 hover:from-[#d98a2a] hover:to-[#f5c14f] hover:shadow-[0_18px_44px_rgba(217,149,36,0.36)] lg:inline-flex"
-          href="#contact"
+          href="/contact"
         >
           Request Quote
           <ArrowRight className="h-4 w-4" />
@@ -106,7 +106,7 @@ export function Navbar() {
             ))}
             <Link
               className="bg-white/3 px-5 py-4 font-medium text-white"
-              href="#contact"
+              href="/contact"
               onClick={() => setOpen(false)}
             >
               Request Quote

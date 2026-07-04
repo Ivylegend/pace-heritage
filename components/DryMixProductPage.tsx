@@ -27,7 +27,7 @@ export default function DryMixProductPage() {
             </p>
             <div className="hero-ctas ph-reveal reveal-delay-3">
               <Link
-                href="mailto:info@paceheritage.com"
+                href="/contact"
                 className="btn btn-primary"
               >
                 Order Dry Mix
@@ -433,7 +433,7 @@ export default function DryMixProductPage() {
             </p>
             <div className="hero-ctas ph-reveal reveal-delay-2">
               <Link
-                href="mailto:info@paceheritage.com"
+                href="/contact"
                 className="btn btn-gold"
               >
                 Request Wholesale Pricing

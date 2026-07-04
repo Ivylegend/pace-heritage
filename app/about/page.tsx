@@ -206,7 +206,7 @@ export default function AboutPage() {
         <div className="absolute inset-0 -z-20 bg-[linear-gradient(90deg,rgba(255,255,255,0.04)_1px,transparent_1px),linear-gradient(rgba(255,255,255,0.035)_1px,transparent_1px)] bg-size-[82px_82px]" />
 
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-0 lg:gap-12 items-center">
             {/* Left – text */}
             <div className="space-y-7">
               <motion.div
@@ -257,7 +257,7 @@ export default function AboutPage() {
                 delay: 0.18,
                 ease: [0.19, 1, 0.22, 1],
               }}
-              className="relative w-full h-[500px]"
+              className="relative w-full h-[300px] lg:h-[500px]"
             >
               {/* Ambient Glow */}
               <div

@@ -4,7 +4,7 @@ export const navigation = [
   { label: "Manufacturing", href: "/#manufacturing" },
   { label: "Distribution", href: "/#distribution" },
   { label: "Private Label", href: "/#private-label" },
-  { label: "Contact", href: "/#contact" },
+  { label: "Contact", href: "/contact" },
 ];
 
 export const stats = [

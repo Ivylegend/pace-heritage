@@ -28,7 +28,7 @@ export default function ConesProductPage() {
                 Crisp, delicious and perfectly crafted cones that elevate every ice cream experience.
               </p>
               <div className="hero-ctas ph-reveal reveal-delay-2">
-                <Link href="mailto:info@paceheritage.com" className="btn btn-gold">
+                <Link href="/contact" className="btn btn-gold">
                   Request Wholesale Pricing
                   <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
                     <path d="M5 12h14M13 6l6 6-6 6" />
@@ -271,7 +271,7 @@ export default function ConesProductPage() {
             <div className="cta-copy">
               <h2 className="ph-reveal">Ready To Serve<br /><span className="gold">More Customers?</span></h2>
               <p className="ph-reveal reveal-delay-1">Stock your business with premium waffle cones trusted by retailers across Nigeria.</p>
-              <Link href="mailto:info@paceheritage.com" className="btn btn-gold ph-reveal reveal-delay-2">
+              <Link href="/contact" className="btn btn-gold ph-reveal reveal-delay-2">
                 Request Wholesale Pricing
                 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
                   <path d="M5 12h14M13 6l6 6-6 6" />
