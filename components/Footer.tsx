@@ -51,13 +51,22 @@ export function Footer() {
         <div>
           <h2 className={footerHeading}>Get in Touch</h2>
           <address className="grid gap-1.5 not-italic">
-            <a className={footerText} href="tel:+2348031234567">
-              +234 803 123 4567
+            <a className={footerText} href="tel:+2347065934811">
+              07065934811
+            </a>
+            <a className={footerText} href="tel:+2347032328424">
+              07032328424
             </a>
             <a className={footerText} href="mailto:info@paceheritage.com">
               info@paceheritage.com
             </a>
-            <span className={footerText}>Lagos, Nigeria</span>
+            <span className={footerText}>
+              PaceHeritage Limited
+              <br />
+              Block C7, Lagos State Small Scale Industrial Scheme
+              <br />
+              Fatai Atere Way, Matori, Lagos
+            </span>
             <span className={footerText}>Mon - Fri, 8:00 AM - 5:00 PM</span>
           </address>
         </div>

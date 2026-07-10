@@ -2,7 +2,7 @@
 
 import { useState } from "react";
 import { motion } from "framer-motion";
-import { ArrowRight, Mail, MapPin, Phone, Clock } from "lucide-react";
+import { ArrowRight, Mail, MapPin, MessageCircle, Phone, Clock } from "lucide-react";
 import { Navbar } from "@/components/Navbar";
 import { Footer } from "@/components/Footer";
 
@@ -313,10 +313,31 @@ export default function ContactPage() {
                     <div>
                       <p className="text-xs font-semibold uppercase tracking-widest text-white/40">Phone</p>
                       <a
-                        href="tel:+2348031234567"
+                        href="tel:+2347065934811"
                         className="mt-0.5 block text-sm font-medium text-white transition hover:text-[#f3b23f]"
                       >
-                        +234 803 123 4567
+                        07065934811
+                      </a>
+                      <a
+                        href="tel:+2347032328424"
+                        className="mt-0.5 block text-sm font-medium text-white transition hover:text-[#f3b23f]"
+                      >
+                        07032328424
+                      </a>
+                    </div>
+                  </li>
+
+                  <li className="flex items-start gap-4">
+                    <span className="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-[#f3b23f]/12 ring-1 ring-[#f3b23f]/20">
+                      <MessageCircle className="h-4.5 w-4.5 text-[#f3b23f]" />
+                    </span>
+                    <div>
+                      <p className="text-xs font-semibold uppercase tracking-widest text-white/40">WhatsApp</p>
+                      <a
+                        href="https://wa.me/2347032328424"
+                        className="mt-0.5 block text-sm font-medium text-white transition hover:text-[#f3b23f]"
+                      >
+                        07032328424
                       </a>
                     </div>
                   </li>
@@ -343,7 +364,17 @@ export default function ContactPage() {
                     <div>
                       <p className="text-xs font-semibold uppercase tracking-widest text-white/40">Address</p>
                       <p className="mt-0.5 text-sm font-medium leading-6 text-white">
-                        Agbara Industrial Estate,<br />Lagos State, Nigeria
+                        PaceHeritage Limited
+                        <br />
+                        Block C7,
+                        <br />
+                        Lagos State Small Scale Industrial Scheme,
+                        <br />
+                        Fatai Atere Way,
+                        <br />
+                        Matori,
+                        <br />
+                        Lagos
                       </p>
                     </div>
                   </li>
