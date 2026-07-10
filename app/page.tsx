@@ -74,16 +74,19 @@ export default function Home() {
           id="manufacturing"
         >
           <SlideIn from="left">
-            <div className="relative min-h-[360px] overflow-hidden lg:min-h-[620px]">
-              <Image
-                className="h-full w-full object-cover"
-                src="/images/manufacturing-excellence.png"
-                alt="Modern ice cream manufacturing facility with hygienic production equipment"
-                width={1409}
-                height={1117}
-                sizes="(max-width: 900px) 100vw, 50vw"
+            <div className="relative flex h-full min-h-[360px] items-center justify-center overflow-hidden lg:min-h-[620px]">
+              <video
+                className="h-full w-full object-cover object-center mask-[linear-gradient(to_right,transparent_0%,black_12%,black_88%,transparent_100%),linear-gradient(to_bottom,transparent_0%,black_6%,black_94%,transparent_100%)] mask-intersect [-webkit-mask-image:linear-gradient(to_right,transparent_0%,black_12%,black_88%,transparent_100%),linear-gradient(to_bottom,transparent_0%,black_6%,black_94%,transparent_100%)] [-webkit-mask-composite:source-in]"
+                src="/videos/pace-video.webm"
+                autoPlay
+                loop
+                muted
+                playsInline
+                preload="auto"
               />
-              <div className="absolute inset-0 bg-linear-to-r from-transparent to-black/40 pointer-events-none" />
+              {/* soft color wash to tie the video into the section's palette */}
+              <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_74%_32%,rgba(17,166,232,0.18),transparent_45%)] mix-blend-multiply" />
+              <div className="pointer-events-none absolute inset-0 bg-linear-to-r from-transparent to-black/40" />
             </div>
           </SlideIn>
           <SlideIn from="right">
