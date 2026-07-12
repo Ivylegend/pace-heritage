@@ -34,6 +34,7 @@ export default function ContactPage() {
     inquiryType: "",
     message: "",
   });
+  const [errorMessage, setErrorMessage] = useState("");
 
   function handleChange(
     e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>
@@ -44,9 +45,25 @@ export default function ContactPage() {
   async function handleSubmit(e: React.FormEvent) {
     e.preventDefault();
     setFormState("submitting");
-    // Simulate network delay — wire up to your backend / form service here
-    await new Promise((r) => setTimeout(r, 1400));
-    setFormState("success");
+    setErrorMessage("");
+
+    try {
+      const response = await fetch("/api/contact", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(form),
+      });
+      const data = (await response.json()) as { error?: string };
+
+      if (!response.ok) {
+        throw new Error(data.error || "Unable to send message right now.");
+      }
+
+      setFormState("success");
+    } catch (error) {
+      setFormState("error");
+      setErrorMessage(error instanceof Error ? error.message : "Unable to send message right now.");
+    }
   }
 
   return (
@@ -124,7 +141,7 @@ export default function ContactPage() {
                     Thank you for reaching out. A member of our team will get back to you within one business day.
                   </p>
                   <button
-                    onClick={() => { setFormState("idle"); setForm({ name: "", company: "", email: "", phone: "", inquiryType: "", message: "" }); }}
+                    onClick={() => { setFormState("idle"); setErrorMessage(""); setForm({ name: "", company: "", email: "", phone: "", inquiryType: "", message: "" }); }}
                     className="mt-8 inline-flex items-center gap-2 rounded-xl border border-white/15 bg-white/6 px-6 py-3 text-sm font-medium text-white/80 transition hover:bg-white/10 hover:text-white"
                   >
                     Send another message
@@ -138,6 +155,11 @@ export default function ContactPage() {
                   <p className="mt-2 text-sm leading-6 text-white/50">
                     Fill in the form below and we&apos;ll get back to you within one business day.
                   </p>
+                  {formState === "error" ? (
+                    <p className="mt-4 rounded-xl border border-red-300/20 bg-red-500/10 px-4 py-3 text-sm leading-6 text-red-100">
+                      {errorMessage}
+                    </p>
+                  ) : null}
 
                   <form
                     id="contact-form"

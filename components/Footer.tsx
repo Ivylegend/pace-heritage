@@ -1,7 +1,7 @@
-import { ArrowRight } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
 import { navigation } from "@/lib/site-data";
+import { NewsletterForm } from "./NewsletterForm";
 
 const footerHeading = "mb-4 text-base font-bold text-white";
 const footerText = "text-sm leading-7 text-white/70";
@@ -75,12 +75,7 @@ export function Footer() {
           <p className={footerText}>
             Subscribe for product updates, manufacturing capacity news, and distribution opportunities.
           </p>
-          <form className="mt-4 flex min-h-11 overflow-hidden rounded-lg bg-white" aria-label="Newsletter signup">
-            <input className="min-w-0 flex-1 px-3.5 text-[#07182f] outline-0" type="email" placeholder="Enter your email" aria-label="Email address" />
-            <button className="flex w-12 items-center justify-center bg-[#d99524] font-black text-white" type="submit" aria-label="Submit newsletter signup">
-              <ArrowRight className="h-5 w-5" />
-            </button>
-          </form>
+          <NewsletterForm />
         </div>
       </div>
       <div className="mx-auto mt-11 flex w-[min(1180px,calc(100%-40px))] flex-col justify-between gap-4 border-t border-white/10 pt-5 text-xs text-white/70 md:flex-row">
